@@ -1,6 +1,4 @@
-* {
-  box-sizing: border-box; }
-
+/* style.scss*/
 .ba-menu {
   display: flex;
   align-items: center;
