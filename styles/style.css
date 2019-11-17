@@ -1,15 +1,9 @@
-* {
-    box-sizing: border-box;
-}
-
+/* style.scss*/
 .ba-menu {
-    display: flex;
-    align-items: center;
-    list-style: none;
-}
+  display: flex;
+  align-items: center;
+  list-style: none; }
 
 .ba-menu__link {
-    color: inherit;
-    text-decoration: none;
-}
-
+  color: inherit;
+  text-decoration: none; }

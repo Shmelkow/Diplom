@@ -1,0 +1,61 @@
+//VARIABLES
+$containerWidth: 1170px;
+$gap: 15px;
+$columnsCount: 12;
+$colWidth: 100 / $columnsCount;
+
+
+
+* {
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: $containerWidth;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 $gap;
+}
+
+/*ba-grid*/
+
+.ba-row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -$gap;
+    margin-right: -$gap;
+}
+
+.ba-row + .ba-row {
+    margin-top: 1rem;
+}
+
+[class^="ba-col"] {
+    padding-left: $gap;
+    padding-right: $gap;
+    width: 100%;
+}
+
+@for $i from 1 through $columnsCount {
+    .ba-col-#{$i} {
+        width: $colWidth * $i;
+    }
+}
+
+/*ba-common*/
+
+.ba-text-center {
+    text-align: center;
+}
+
+.ba-text-right {
+    text-align: right;
+}
+
+.ba-text-left {
+    text-align: left;
+}
+
+.ba-text-justify {
+    text-align: justify;
+}
