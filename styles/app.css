@@ -1,5 +1,11 @@
+@charset "UTF-8";
 * {
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  border: 1px dashed black; }
+
+@media screen and (max-width: 360px) {
+  html {
+    font-size: 12px; } }
 
 .container {
   max-width: 1170px;
@@ -58,7 +64,54 @@
 .ba-col-12 {
   width: 100%; }
 
+/*
+    0-360 : xs
+    361-768 : sm Новый телефон
+    769-1024 : md Планшет
+    1025-1400 : lg Компьютер
+    > 1400 : xl Большой компьютер
+*/
+@media screen and (min-width: 991px) {
+  .ba-col-md-1 {
+    width: 8.33333%; }
+  .ba-col-md-2 {
+    width: 16.66667%; }
+  .ba-col-md-3 {
+    width: 25%; }
+  .ba-col-md-4 {
+    width: 33.33333%; }
+  .ba-col-md-5 {
+    width: 41.66667%; }
+  .ba-col-md-6 {
+    width: 50%; }
+  .ba-col-md-7 {
+    width: 58.33333%; }
+  .ba-col-md-8 {
+    width: 66.66667%; }
+  .ba-col-md-9 {
+    width: 75%; }
+  .ba-col-md-10 {
+    width: 83.33333%; }
+  .ba-col-md-11 {
+    width: 91.66667%; }
+  .ba-col-md-12 {
+    width: 100%; }
+  .hidden-md {
+    display: none; } }
+
+@media screen and (max-width: 990px) {
+  .hidden-sm {
+    display: none !important; } }
+
 /*ba-common*/
+.visually-hidden {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  left: -999999px; }
+
 .ba-text-center {
   text-align: center; }
 
@@ -71,12 +124,205 @@
 .ba-text-justify {
   text-align: justify; }
 
-/* style.scss*/
-.ba-menu {
-  display: flex;
-  align-items: center;
-  list-style: none; }
+@media screen and (min-width: 991px) {
+  .ba-top-wrapper {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    min-height: 500px; } }
 
-.ba-menu__link {
+.ba-header {
+  background-color: #7acec3;
+  color: #ffffff;
+  padding-top: 1rem; }
+  @media screen and (min-width: 991px) {
+    .ba-header {
+      width: 31%;
+      padding-top: 50px;
+      padding-bottom: 100px;
+      background-image: linear-gradient(to left top, #7acec3 50%, #e9eae2, #7acec3 50.5%); } }
+  .ba-header-wrapper {
+    position: relative;
+    height: 100%; }
+  .ba-header-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1rem 1rem; }
+    @media screen and (min-width: 991px) {
+      .ba-header-top {
+        flex-direction: column;
+        height: 100%;
+        padding: 0; } }
+  .ba-header-adress__list {
+    margin-left: auto; }
+    @media screen and (min-width: 991px) {
+      .ba-header-adress__list {
+        margin-left: 12.9%;
+        margin-right: auto; } }
+  .ba-header-adress__item, .ba-header-contact__item {
+    font-family: "Roboto Condensed";
+    font-size: 0.8125rem;
+    line-height: 1.1em; }
+  .ba-header-contact__list {
+    margin-left: auto; }
+    @media screen and (min-width: 991px) {
+      .ba-header-contact__list {
+        margin-left: 29.24%;
+        margin-right: auto;
+        margin-top: auto; } }
+
+.ba-menu-btn {
+  /* Style for "border" */
+  min-width: calc((125/120)*80px);
+  min-height: 80px;
+  border: 3px solid #e9eae2; }
+  @media screen and (max-width: 360px) {
+    .ba-menu-btn {
+      min-width: calc((125/120)*40px);
+      min-height: 40px; } }
+  @media screen and (min-width: 991px) {
+    .ba-menu-btn {
+      width: 125px;
+      height: 120px;
+      margin-bottom: 18.4%; } }
+  .ba-menu-btn > i {
+    font-size: 24px; }
+    @media screen and (min-width: 991px) {
+      .ba-menu-btn > i {
+        font-size: 34px; } }
+
+.ba-menu {
+  border: 3px solid #f8c255;
+  background-color: #f8c255;
+  display: none;
+  margin: 0;
+  padding: 0;
+  list-style: none; }
+  @media screen and (min-width: 991px) {
+    .ba-menu {
+      position: absolute;
+      top: 1px;
+      right: 63%;
+      height: 120px;
+      padding-right: 38px;
+      padding-left: 53px; }
+      .ba-menu__item + .ba-menu__item {
+        margin-left: 36px; } }
+  .ba-menu.open {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; }
+  .ba-menu__link {
+    display: block;
+    padding: 0.5rem 0.5rem;
+    color: #ffffff;
+    font-family: 'Roboto';
+    font-size: 0.875rem;
+    line-height: 1.78;
+    text-transform: uppercase; }
+
+.ba-hero {
+  padding-top: 1rem; }
+  @media screen and (min-width: 991px) {
+    .ba-hero {
+      width: 69%;
+      padding-top: 50px; } }
+  @media screen and (min-width: 991px) {
+    .ba-hero-wrapper {
+      display: flex;
+      min-height: 500px;
+      padding-right: 0;
+      padding-left: 14.5%; } }
+  .ba-hero-picture {
+    margin-left: auto; }
+  .ba-hero__img {
+    display: block;
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+    object-position: center; }
+  .ba-hero__logo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1rem 1rem; }
+    @media screen and (min-width: 991px) {
+      .ba-hero__logo {
+        flex-direction: column;
+        padding: 0 0 100px; } }
+  .ba-hero__info {
+    width: 100%;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; }
+  .ba-hero__title {
+    color: #393d3c;
+    font-family: "Roboto Condensed";
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: .75em; }
+    @media screen and (min-width: 991px) {
+      .ba-hero__title {
+        font-size: 1.125rem;
+        width: 90px;
+        margin-bottom: 61px;
+        text-align: left; } }
+  .ba-hero__media {
+    display: flex;
+    justify-content: center;
+    align-self: center; }
+
+.ba-media__link + .ba-media__link {
+  margin-left: 1rem; }
+  @media screen and (min-width: 991px) {
+    .ba-media__link + .ba-media__link {
+      margin-left: 0.75rem;
+      transform: rotate(360deg); } }
+
+.ba-menu-media__link {
+  font-size: 1.375rem;
+  color: #7acec3; }
+
+.ba-logo {
+  display: inline-block;
+  min-width: 100px; }
+  @media screen and (max-width: 768px) {
+    .ba-logo {
+      width: 25%; } }
+  @media screen and (max-width: 425px) {
+    .ba-logo {
+      width: 35%; } }
+  .ba-logo__img {
+    display: block;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center; }
+
+/* style.scss*/
+body {
+  background-color: #e9eae2;
+  font-family: 'Roboto Condensed', sans-serif;
+  text-transform: uppercase; }
+
+button {
+  background: none;
+  border: none; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 400;
+  margin: 0; }
+
+p {
+  margin: 0; }
+
+a {
   color: inherit;
   text-decoration: none; }
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0; }

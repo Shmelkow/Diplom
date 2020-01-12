@@ -1,13 +1,25 @@
 //VARIABLES
-$containerWidth: 1170px;
+$containerWidth: 1170px;//1280-55-55=1170px
 $gap: 15px;
 $columnsCount: 12;
 $colWidth: 100% / $columnsCount;
 
+$primaryColor: #7acec3; //фон, лого
+$secondaryColor: #ebb240; //фон
+$menuColor: #f8c255;
+
+$backgroundColor: #e9eae2;//основной фон
 
 
 * {
     box-sizing: border-box;
+    border: 1px dashed black;
+}
+
+@media screen and (max-width: 360px) {
+    html {
+        font-size: 12px;
+    }
 }
 
 .container {
@@ -42,7 +54,43 @@ $colWidth: 100% / $columnsCount;
     }
 }
 
+/*
+    0-360 : xs
+    361-768 : sm Новый телефон
+    769-1024 : md Планшет
+    1025-1400 : lg Компьютер
+    > 1400 : xl Большой компьютер
+*/
+
+@media screen and (min-width: 991px) {
+    @for $i from 1 through $columnsCount {
+        .ba-col-md-#{$i} {
+            width: $colWidth * $i;
+        }
+    }
+    .hidden-md {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 990px) {
+    .hidden-sm {
+        display: none !important;
+    }
+}
+
+
+
 /*ba-common*/
+
+.visually-hidden {
+    position: absolute;
+    clip: rect(0 0 0 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    left: -999999px;
+  }
 
 .ba-text-center {
     text-align: center;

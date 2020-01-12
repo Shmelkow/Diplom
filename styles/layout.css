@@ -1,5 +1,7 @@
+@charset "UTF-8";
 * {
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  border: 1px dashed black; }
 
 .container {
   max-width: 1170px;
@@ -58,7 +60,54 @@
 .ba-col-12 {
   width: 100%; }
 
+/*
+    0-360 : xs
+    361-768 : sm Новый телефон
+    769-1024 : md Планшет
+    1025-1400 : lg Компьютер
+    > 1400 : xl Большой компьютер
+*/
+@media screen and (min-width: 991px) {
+  .ba-col-md-1 {
+    width: 8.33333%; }
+  .ba-col-md-2 {
+    width: 16.66667%; }
+  .ba-col-md-3 {
+    width: 25%; }
+  .ba-col-md-4 {
+    width: 33.33333%; }
+  .ba-col-md-5 {
+    width: 41.66667%; }
+  .ba-col-md-6 {
+    width: 50%; }
+  .ba-col-md-7 {
+    width: 58.33333%; }
+  .ba-col-md-8 {
+    width: 66.66667%; }
+  .ba-col-md-9 {
+    width: 75%; }
+  .ba-col-md-10 {
+    width: 83.33333%; }
+  .ba-col-md-11 {
+    width: 91.66667%; }
+  .ba-col-md-12 {
+    width: 100%; }
+  .hidden-md {
+    display: none; } }
+
+@media screen and (max-width: 990px) {
+  .hidden-sm {
+    display: none !important; } }
+
 /*ba-common*/
+.visually-hidden {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  left: -999999px; }
+
 .ba-text-center {
   text-align: center; }
 
