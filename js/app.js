@@ -5,6 +5,8 @@ $(document).ready(function() {
 
     $(".ba-menu-btn").on("click", function() {
         $(".ba-menu").toggleClass("open");
+        $(".ba-menu-btn i").toggleClass("fa-search fa-times");
+        $(this).toggleClass("pushed");
     });
 
     /* $(window).on('resize', function() {
