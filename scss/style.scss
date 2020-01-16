@@ -1,9 +1,13 @@
 /* style.scss*/
 
 body {
-    background-color: $backgroundColor;
+    //background-color: $backgroundColor;
     font-family: 'Roboto Condensed', sans-serif;
     text-transform: uppercase;
+    @media screen and (min-width: 1800px) {
+        width: 1800px;
+        margin: 0 auto;
+    }
 }
 
 button {
@@ -345,7 +349,7 @@ ul {
     padding: 0.5rem 1rem;
     @media screen and (min-width: 991px) {
         position: relative;
-        top: -234px;
+        top: -250px;
         width: 31%;
         min-height: 465px;
         background-size: auto 350px;

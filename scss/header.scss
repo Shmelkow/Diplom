@@ -121,8 +121,8 @@
 
     @media screen and (min-width: 991px) {
         position: absolute;
-        top: 1px;
-        right: 63%;
+        top: 0;
+        right: 60%;
         height: 120px;
         padding-right: 38px;
         padding-left: 53px;
@@ -149,6 +149,7 @@
 }
 
 .ba-hero {
+    background-color: $backgroundColor;
     padding-top: 1rem;
     @media screen and (min-width: 991px) {
         width: 69%;
