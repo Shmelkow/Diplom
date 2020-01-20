@@ -535,6 +535,13 @@ ul {
             margin-left: -5px;
         }
     }
+    & .ba-projects-main__item + .ba-projects-main__item {
+        margin-top: 0;
+        @media screen and (min-width: 991px) {
+            margin-top: -5px;
+        }
+
+    }
     &__title {
         flex-grow: 1;
         text-align: center;
@@ -575,7 +582,8 @@ ul {
         
     }
     &-content {
-        
+        padding-top: 1rem;
+        padding-bottom: 1rem;
         @media screen and (min-width: 991px) {
             width: 69%;
             min-height: 500px;
@@ -601,7 +609,10 @@ ul {
             }
         }
         &__text + &__text {
-            margin-top: 40px;
+            margin-top: 1.5rem;
+            @media screen and (min-width: 991px) {
+                margin-top: 40px;
+            }
         }
     }
     &-picture {
@@ -612,19 +623,21 @@ ul {
         }
     }
     &-awards {
-        position: relative;
-        color: #333333;
-        font-size: 14px;
-        font-weight: 700;
-        &::before{
-            content: "";
-            display: block;
-            height: 1px;
-            width: 100%;
-            background-color: #000;
-            position: absolute;
-            bottom: -2px;
-            left: 0;
+        &__title {
+            position: relative;
+            color: #333333;
+            font-size: 14px;
+            font-weight: 700;
+            &::before{
+                content: "";
+                display: block;
+                height: 1px;
+                width: 100%;
+                background-color: #000;
+                position: absolute;
+                bottom: -2px;
+                left: 0;
+            }
         }
         &__text {
             color: #333333;
@@ -642,11 +655,124 @@ ul {
             padding-top: 60px;
             padding-bottom: 102px;
         }
+        &__info {
+            margin-bottom: 1rem;
+            @media screen and (min-width: 991px) {
+                margin-bottom: 0;
+            }
+        }
+        &__profile {
+            margin-bottom: 1rem;
+            display: flex;
+            @media screen and (min-width: 991px) {
+                flex-direction: column;
+                margin-bottom: 0;
+            }
+        }
+        &__title {
+            font-size: 0.875rem;
+        }
         &__text {
             text-transform: none;
             & p {
-                margin-top: 1.5rem;
+                margin-top: 0.5rem;
+                font-size: 0.75rem;
+                font-weight: 300;
+                @media screen and (min-width: 991px) {
+                    margin-top: 1.5rem;
+                    padding-right: 10px;
+                    line-height: 1rem;
+                }
             }
         }
     }
+}
+
+.ba-staff {
+    &-picture {
+        width: 50%;
+        @media screen and (min-width: 991px) {
+            width: 100%;
+            margin-bottom: 0.85rem;
+        }
+    }
+    &-text {
+        padding-left: 1rem;
+        margin-bottom: 1rem;
+        @media screen and (min-width: 991px) {
+            padding-left: 0;
+            margin-bottom: 1rem;
+
+        }
+
+    }
+    &__title {
+        color: #333333;
+        font-size: 1.25rem;
+        font-weight: 700;
+        @media screen and (min-width: 991px) {
+            font-size: 0.8125rem;
+        }
+    }
+    &__text {
+        color: #333333;
+        font-size: 0.75rem;
+    }
+    &-block {
+        width: 50%;
+        @media screen and (min-width: 991px) {
+            width: 100%;
+        }
+    }
+    &-info {
+        @media screen and (min-width: 991px) {
+            display: flex;
+            justify-content: space-between;
+        }
+        &__link {
+            display: block;
+            text-align: center;
+            color: #fd5000;
+            margin-bottom: 0.75rem;
+            @media screen and (min-width: 991px) {
+                margin-bottom: 0;
+            }
+            &::after {
+                font-family: "Font Awesome 5 Free";
+                font-weight: 900;
+                font-size: 1rem;
+                content: "\f060";
+                margin: 0 0 0 .25rem;
+                display: inline-block;
+                color: #fd5000;
+            }
+            &:hover {
+                color: #000;
+                &::after {
+                    color: #000;
+                }
+            }
+        }
+        &__list {
+            display: flex;
+            justify-content: space-evenly;
+        }
+    }
+    &-list {
+        &__link {
+            color: #fd5000;
+            font-size: 0.875rem;
+            &:hover {
+                color: #000;
+            }
+        }
+        &__item + &__item {
+            @media screen and (min-width: 991px) {
+                margin-left: 1rem;
+            }
+        }
+    }
+}
+.ba-news {
+    
 }
