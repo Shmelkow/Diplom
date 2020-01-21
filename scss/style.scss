@@ -117,6 +117,7 @@ ul {
         }
         &__list {
             padding-left: 2rem;
+            overflow: hidden;
             @media screen and (min-width: 991px) {
                 margin-right: 55%;
             }
@@ -133,21 +134,35 @@ ul {
             color: #ffffff;
             font-size: 0.875rem;
             line-height: 1.077;
+            
+            &::before {
+                font-family: "Font Awesome 5 Free";
+                font-weight: 900;
+                font-size: 1.18em;
+                content: "\f061";
+                display: inline-block;
+                color: #fff;
+                position: absolute;
+                top: 0;
+                left: -5em;
+            }
             @media screen and (min-width: 991px) {
                 font-size: 0.8125rem;
             } 
-            &:focus, &:hover, &:active {
+            &:focus, &:active {
                 color: #000000;
+                transition: 0.3s;
                 &::before {
-                    font-family: "Font Awesome 5 Free";
-                    font-weight: 900;
-                    font-size: 1.18em;
-                    content: "\f061";
-                    display: inline-block;
-                    color: #fff;
-                    position: absolute;
-                    top: 0;
-                    left: -1em;
+                    transform: translateX(4em);
+                    transition: 0.3s;
+                }
+            }
+            &:hover {
+                color: #000000;
+                transition: 0.3s;
+                &::before {
+                    transform: translateX(4em);
+                    transition: 0.3s;
                 }
             }
         }
@@ -526,13 +541,16 @@ ul {
         }
         @media screen and (min-width: 991px) {
             margin-right: 0;
-            padding-left: 0;
+            margin-left: -2rem;
         }
     }
     & .ba-projects-main__item {
-        margin-left: 1.5rem;
+        padding-left: 1.5rem;
+        overflow: hidden;
         @media screen and (min-width: 991px) {
             margin-left: -5px;
+            padding-left: 0;
+            overflow: visible;
         }
     }
     & .ba-projects-main__item + .ba-projects-main__item {
