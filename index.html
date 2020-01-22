@@ -56,21 +56,21 @@
                 </div>
 
                 <nav>
-                    <ul class="ba-menu">
+                    <ul class="ba-menu" id="menu">
                         <li class="ba-menu__item">
                             <a href="#" class="ba-menu__link">home</a>
                         </li>
                         <li class="ba-menu__item">
-                            <a href="#" class="ba-menu__link">projects</a>
+                            <a href="#projects" class="ba-menu__link">projects</a>
                         </li>
                         <li class="ba-menu__item">
-                            <a href="#" class="ba-menu__link">studio</a>
+                            <a href="#studio" class="ba-menu__link">studio</a>
                         </li>
                         <li class="ba-menu__item">
-                            <a href="#" class="ba-menu__link">news</a>
+                            <a href="#news" class="ba-menu__link">news</a>
                         </li>
                         <li class="ba-menu__item">
-                            <a href="#" class="ba-menu__link">contact</a>
+                            <a href="#contact" class="ba-menu__link">contact</a>
                         </li>
                     </ul>
                 </nav>
@@ -122,7 +122,7 @@
     </div>
 
     <main>
-        <section class="ba-section ba-projects">
+        <section class="ba-section ba-projects" id="projects">
             <div class="ba-projects-main">
                 <h2 class="ba-projects-main__title">projects</h2>
 
@@ -403,7 +403,7 @@
             </div>
         </section>
 
-        <section class="ba-section ba-studio">
+        <section class="ba-section ba-studio" id="studio">
             <div class="ba-studio-main">
                 <h2 class="ba-projects-main__title">studio</h2>
             </div>
@@ -601,7 +601,7 @@
             
         </section>
 
-        <section class="ba-section ba-news">
+        <section class="ba-section ba-news" id="news">
             <div class="ba-news-main">
                 <h2 class="ba-projects-main__title ba-news__title">news</h2>
             </div>
@@ -618,7 +618,7 @@
                         <p>
                             Maecenas imperdiet nisi lorem, sed fermentum tortor pretium eget. Sed mollis lacus quis nunc cursus cursus. Quisque et magna sit amet sapien fermentum scelerisque eu id massa. Mauris ornare massa vel mauris tempus, vitae tempus urna tincidunt.
                         </p>
-                        <a href="#" class="ba-news-content__link">read more</a>
+                        <a href="https://www.dezeen.com/design/" target="_blank" title="Mauris et dui sed" class="ba-news-content__link">read more</a>
                     </div>
 
                 </div>
@@ -634,7 +634,8 @@
                         <p>
                             Praesent non mauris nec orci scelerisque faucibus. Nulla ac varius est. Aenean auctor nisl elit, nec sollicitudin lectus iaculis sed. Maecenas aliquam ligula vitae pharetra scelerisque.
                         </p>
-                        <a href="#" class="ba-news-content__link ba-news-content__link_margin">read more</a>
+                        <a href="https://www.dezeen.com/2020/01/22/ame-nochi-hana-nendo-installation-le-bon-marche-paris/" 
+                        target="_blank" title="Proin vehicula nibh massa" class="ba-news-content__link ba-news-content__link_margin">read more</a>
                     </div>
 
                 </div>
@@ -642,7 +643,7 @@
         </section>
     </main>
 
-    <footer class="ba-footer">
+    <footer class="ba-footer" id="contact">
         <div id="map"></div>
         <div class="ba-footer-content">
             <div class="ba-footer__info">
@@ -713,6 +714,62 @@
             </div>
         </div>
     </footer>
+
+    <div class="ba-modal">
+        <div class="ba-modal-content" style="padding: 15px; background: #fff;">
+            <button class='ba-modal-close' aria-label='close modal'>
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="ba-modal-content-wrapper">
+                <div class="ba-modal-info">
+                    <div class="ba-modal__info">
+                        <h3 class="ba-projects__title">Fondue</h3>
+                        <ul class="ba-projects__list">
+                            <li class="ba-projects__item">
+                                <b>Project Assistant: </b>Francesco Dompieri
+                            </li>
+                            <li class="ba-projects__item">
+                                <b>Material: </b>Glass and Metal
+                            </li>
+                            <li class="ba-projects__item">
+                                <b>Typology: </b>Suspension lamp
+                            </li>
+                            <li class="ba-projects__item">
+                                <b>Client: </b>David Design
+                            </li>
+                            <li class="ba-projects__item">
+                                <b>Year: </b>2014
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="ba-modal__slider"></div>
+                    <ul class="ba-hero__media">
+                        <li class="ba-media__link">
+                            <a href="https://www.facebook.com/" target="_blank" title="Facebook" class="ba-menu-media__link">  
+                                <i class="fab fa-facebook-f"></i>
+                            </a> 
+                        </li>
+                        <li class="ba-media__link">
+                            <a href="https://www.twitter.com/"  target="_blank" title="Twitter" class="ba-menu-media__link">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </li>
+                        <li class="ba-media__link">
+                            <a href="https://www.linkedin.com/" target="_blank" title="Linkedin" class="ba-menu-media__link">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                        </li>
+                        <li class="ba-media__link">
+                            <a href="https://plus.google.com/" target="_blank" title="Google Plus" class="ba-menu-media__link">
+                                <i class="fab fa-google-plus-g"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="ba-modal-picture"></div>
+            </div>
+        </div>
+    </div>
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" 

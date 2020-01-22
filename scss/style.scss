@@ -149,15 +149,7 @@ ul {
             @media screen and (min-width: 991px) {
                 font-size: 0.8125rem;
             } 
-            &:focus, &:active {
-                color: #000000;
-                transition: 0.3s;
-                &::before {
-                    transform: translateX(4em);
-                    transition: 0.3s;
-                }
-            }
-            &:hover {
+            &:focus, &:active, &:hover {
                 color: #000000;
                 transition: 0.3s;
                 &::before {

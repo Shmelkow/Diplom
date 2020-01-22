@@ -1,0 +1,127 @@
+.ba-modal{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, .45);
+    z-index: 20;
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+}
+
+.ba-modal--open{
+    display: flex;
+};
+
+.ba-modal-content {
+    width: 90vw;
+    height: 90vh;
+    position: relative;
+    background-color: #fff;
+    padding: 15px;
+}
+
+//кнопка
+.ba-modal-close{
+    position: absolute;
+    border: 1px solid #000;
+    top: 5vh;
+    right: 10%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: calc((125/120)*80px);
+    min-height: 80px;
+    margin-left: 8px;
+    @media screen and (max-width: 360px) {
+        min-width: calc((125/120)*40px);
+        min-height: 40px;
+    }
+    @media screen and (min-width: 991px) {
+        top: 10vh;
+        width: 125px;
+        height: 120px;
+    }
+    &>i {
+        font-size: 24px;
+        @media screen and (min-width: 991px) {
+            font-size: 34px;
+        }
+    }
+    &.pushed {
+        background: $menuColor;
+        border: $menuColor;
+        @media screen and (min-width: 991px) {
+            outline: none;
+        }   
+    }
+    &:hover {
+        background-color: $menuColor;
+    }
+}
+
+.ba-modal__image {
+    max-width: 100%;
+    height: auto;
+    max-height: 40vh;
+}
+
+.ba-modal-is-open{
+    overflow: hidden;
+}
+
+/*=====================================*/
+.portfolio-navi {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	list-style: none;	
+}
+	.portfolio-navi a {
+	  padding-top: 5px;
+	  display: -webkit-box;
+	  display: -ms-flexbox;
+	  display: flex;
+	  text-decoration: none;
+	  color: #3c4955;
+	  border-radius: 2px;
+	  font-size: 16px;
+	  -webkit-box-align: center;
+	  -ms-flex-align: center;
+	  align-items: center;
+	  -webkit-box-pack: center;
+	  -ms-flex-pack: center;
+	  justify-content: center;
+	  min-width: 135px;
+	  height: 36px;
+	  background-color: #eaeaea;
+	  text-align: center;
+	  margin: 0 7px;
+	  border-radius: 2px; }
+	  .portfolio-navi a.active {
+		background-color: tomato;
+		color: #fff; }
+  
+  .portfolio-item {
+	height: 300px;
+	width: 29.35%;
+	margin: 2%; }
+	/* .ba-bread {
+	  background-color: red;
+	  height: 350px; }
+	.ba-pizza {
+	  background-color: green;
+	  height: 380px; }
+	.ba-other {
+	  background-color: blue; } */
+	
+  
+  .items-navi .nav-btn {
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	pointer-events: none; }
