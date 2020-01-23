@@ -16,8 +16,29 @@ $(document).ready(function() {
         let id  = $(this).attr('href');
         let top = $(id).offset().top;
          $('body,html').animate({scrollTop: top}, 1500);
-     });    
+     });  
+    
 
+    $('.ba-modal-picture__slider').slick({
+        infinite: true,
+        slidesToShow: 3,
+        slidesToScroll: 1
+    });
+    /* $('.slider-for').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: false,
+        fade: true,
+        asNavFor: '.slider-nav'
+    });
+    $('.slider-nav').slick({
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        asNavFor: '.slider-for',
+        dots: true,
+        centerMode: true,
+        focusOnSelect: true
+    }); */
 //  ===========================================================================  //
 
 $(".ba-gallery__img").on("click", function() {

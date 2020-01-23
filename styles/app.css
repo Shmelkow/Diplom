@@ -1136,22 +1136,39 @@ ul {
   align-items: center;
   justify-content: center; }
   .ba-modal-content {
-    width: 90vw;
-    height: 90vh;
+    width: 95vw;
+    height: 95vh;
     position: relative;
     background-color: #fff;
     padding: 15px 11.5%;
     display: flex;
     justify-content: center;
     align-items: center; }
-    @media screen and (min-width: 991px) {
-      .ba-modal-content-picture {
-        min-height: 500px; } }
     .ba-modal-content-wrapper {
       width: 100%;
       display: flex;
       justify-content: center;
       align-items: center; }
+  @media screen and (min-width: 991px) {
+    .ba-modal-info {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 500px; } }
+  @media screen and (min-width: 991px) {
+    .ba-modal-picture {
+      min-height: 500px;
+      background-color: #ebb240; } }
+  .ba-modal-picture__slider {
+    display: flex;
+    justify-content: space-evenly; }
+  .ba-modal-picture__item {
+    height: 100px;
+    width: 100px;
+    background-color: #ebb240;
+    margin: 0 15px; }
+    .ba-modal-picture__item:nth-child(even) {
+      background-color: #7acec3; }
   .ba-modal__title {
     /* Style for "FONDUE" */
     color: #333333;
@@ -1159,7 +1176,7 @@ ul {
     font-weight: 300;
     line-height: 40px; }
   .ba-modal__list {
-    margin-bottom: 43px; }
+    margin-bottom: 45px; }
   .ba-modal__item {
     /* Style for "Project As" */
     color: #333333;
@@ -1179,7 +1196,20 @@ ul {
     min-height: 130px;
     padding: 15px 0; }
   .ba-modal-media__list {
-    display: flex; }
+    display: flex;
+    justify-content: center; }
+  .ba-modal-media__item:not(:first-child) {
+    margin-left: 1rem; }
+    @media screen and (min-width: 991px) {
+      .ba-modal-media__item:not(:first-child) {
+        margin-left: 30px; } }
+  .ba-modal-media__link {
+    font-size: 1rem; }
+    @media screen and (min-width: 991px) {
+      .ba-modal-media__link {
+        font-size: 1.5rem; } }
+    .ba-modal-media__link:hover {
+      color: #f8c255; }
 
 .ba-modal--open {
   display: flex; }
@@ -1201,7 +1231,7 @@ ul {
       min-height: 40px; } }
   @media screen and (min-width: 991px) {
     .ba-modal-close {
-      top: 10vh;
+      top: 5vh;
       width: 125px;
       height: 120px; } }
   .ba-modal-close > i {

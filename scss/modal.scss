@@ -12,8 +12,8 @@
     align-items: center;
     justify-content: center;
     &-content {
-        width: 90vw;
-        height: 90vh;
+        width: 95vw;
+        height: 95vh;
         position: relative;
         background-color: #fff;
         padding: 15px 11.5%;
@@ -23,16 +23,38 @@
         &-info {
 
         }
-        &-picture {
-            @media screen and (min-width: 991px) {
-                min-height: 500px;
-            }
-        }
         &-wrapper {
             width: 100%;
             display: flex;
             justify-content: center;
             align-items: center;
+        }
+    }
+    &-info {
+        @media screen and (min-width: 991px) {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 500px;
+        }
+    }
+    &-picture {
+        @media screen and (min-width: 991px) {
+            min-height: 500px;
+            background-color: $secondaryColor;
+        }
+        &__slider {
+            display: flex;
+            justify-content: space-evenly;
+        }
+        &__item {
+            height: 100px;
+            width: 100px;
+            background-color: $secondaryColor;
+            margin: 0 15px;
+            &:nth-child(even) {
+                background-color: $primaryColor;
+            }
         }
     }
     &__title {
@@ -43,7 +65,7 @@
         line-height: 40px;
     }
     &__list {
-        margin-bottom: 43px;
+        margin-bottom: 45px;
     }
     &__item {
         /* Style for "Project As" */
@@ -70,6 +92,24 @@
     &-media {
         &__list {
             display: flex;
+            justify-content: center;
+        }
+        &__item {
+            &:not(:first-child) {
+                margin-left: 1rem;
+                @media screen and (min-width: 991px) {
+                    margin-left: 30px;
+                }
+            } 
+        }
+        &__link {
+            font-size: 1rem;
+            @media screen and (min-width: 991px) {
+                font-size: 1.5rem;
+            }
+            &:hover {
+                color: $menuColor;
+            }
         }
     }
 }
@@ -95,7 +135,7 @@
         min-height: 40px;
     }
     @media screen and (min-width: 991px) {
-        top: 10vh;
+        top: 5vh;
         width: 125px;
         height: 120px;
     }
