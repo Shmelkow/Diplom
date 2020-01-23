@@ -1,4 +1,4 @@
-.ba-modal{
+.ba-modal {
     position: fixed;
     left: 0;
     top: 0;
@@ -6,23 +6,77 @@
     height: 100vh;
     background-color: rgba(0, 0, 0, .45);
     z-index: 20;
-    display: none;
+    //display: none;
+    display: flex;
 
     align-items: center;
     justify-content: center;
+    &-content {
+        width: 90vw;
+        height: 90vh;
+        position: relative;
+        background-color: #fff;
+        padding: 15px 11.5%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        &-info {
+
+        }
+        &-picture {
+            @media screen and (min-width: 991px) {
+                min-height: 500px;
+            }
+        }
+        &-wrapper {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+    &__title {
+        /* Style for "FONDUE" */
+        color: #333333;
+        font-size: 30px;
+        font-weight: 300;
+        line-height: 40px;
+    }
+    &__list {
+        margin-bottom: 43px;
+    }
+    &__item {
+        /* Style for "Project As" */
+        color: #333333;
+        font-size: 14px;
+        font-weight: 300;
+        line-height: 14px;
+    }
+    &__text {
+        /* Style for "Merging di" */
+        color: #0b0b0b;
+        font-size: 14px;
+        font-weight: 300;
+        line-height: 14px;
+        text-transform: none;
+        &:last-child {
+            margin-top: 20px;
+        }
+    }
+    &__slider {
+        min-height: 130px;
+        padding: 15px 0;
+    }
+    &-media {
+        &__list {
+            display: flex;
+        }
+    }
 }
 
 .ba-modal--open{
     display: flex;
 };
-
-.ba-modal-content {
-    width: 90vw;
-    height: 90vh;
-    position: relative;
-    background-color: #fff;
-    padding: 15px;
-}
 
 //кнопка
 .ba-modal-close{
@@ -73,7 +127,7 @@
     overflow: hidden;
 }
 
-/*=====================================*/
+/*=====================================
 .portfolio-navi {
 	display: -webkit-box;
 	display: -ms-flexbox;
@@ -116,7 +170,7 @@
 	  background-color: green;
 	  height: 380px; }
 	.ba-other {
-	  background-color: blue; } */
+	  background-color: blue; } 
 	
   
   .items-navi .nav-btn {
@@ -124,4 +178,6 @@
 	-moz-user-select: none;
 	-ms-user-select: none;
 	user-select: none;
-	pointer-events: none; }
+    pointer-events: none; }
+    
+    =====================================*/

@@ -363,7 +363,7 @@ ul {
         background-size: auto 350px;
         background-position-x: center;
         background-position-y: top;
-        padding: 0 0 30px 0;
+        padding: 0 1.5rem 30px;
         display: flex;
         justify-content: center;
         align-items: flex-end;
@@ -574,8 +574,7 @@ ul {
             width: 31%;
             min-height: 500px;
             flex-direction: column-reverse;
-            justify-content: space-between;
-            align-items: flex-end;
+            align-items: flex-start;
             background-image: linear-gradient(
                 to left top,
                 $studioColor 50%,
@@ -586,7 +585,7 @@ ul {
                 bottom: 150px;
             }
             & .ba-projects-main__title {
-                margin-right: 23.5%;
+                margin-left: 50%;
             }
         }
         
@@ -916,7 +915,7 @@ ul {
         flex-wrap: wrap;
         @media screen and (min-width: 991px) {
             width: 50%;
-            padding: 150px 11% 50px 115px;
+            padding: 150px 10% 50px 7.7%;;
         }
         & .ba-hero__title {
             display: none;
@@ -988,10 +987,12 @@ ul {
     &__copyright {
         color: #191919;
         font-size: 0.6rem;
+        text-transform: none;
         margin: 0 auto;
         margin-top: 1rem;
         @media screen and (min-width: 991px) {
             font-size: 0.75rem;
+            align-self: flex-end;
         }
     }
 }
