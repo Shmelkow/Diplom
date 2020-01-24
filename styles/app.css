@@ -1155,20 +1155,24 @@ ul {
       flex-direction: column;
       justify-content: space-between;
       min-height: 500px; } }
-  @media screen and (min-width: 991px) {
-    .ba-modal-picture {
-      min-height: 500px;
-      background-color: #ebb240; } }
   .ba-modal-picture__slider {
-    display: flex;
-    justify-content: space-evenly; }
+    width: 33%;
+    margin: 0 auto; }
   .ba-modal-picture__item {
-    height: 100px;
-    width: 100px;
-    background-color: #ebb240;
-    margin: 0 15px; }
-    .ba-modal-picture__item:nth-child(even) {
-      background-color: #7acec3; }
+    height: 120px;
+    width: 120px;
+    padding: 10px; }
+    .ba-modal-picture__item_large {
+      width: 100%;
+      height: 100%; }
+  .ba-modal-picture__img {
+    border: 1px solid #d4d5cd; }
+    .ba-modal-picture__img_large {
+      height: 50vh;
+      width: 100%;
+      object-fit: cover;
+      object-position: center;
+      border: none; }
   .ba-modal__title {
     /* Style for "FONDUE" */
     color: #333333;
@@ -1222,18 +1226,19 @@ ul {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: calc((125/120)*80px);
+  min-width: 80px;
   min-height: 80px;
   margin-left: 8px; }
   @media screen and (max-width: 360px) {
     .ba-modal-close {
-      min-width: calc((125/120)*40px);
+      min-width: 40px;
       min-height: 40px; } }
   @media screen and (min-width: 991px) {
     .ba-modal-close {
-      top: 5vh;
-      width: 125px;
-      height: 120px; } }
+      width: 100px;
+      height: 100px;
+      top: 50px;
+      right: 50px; } }
   .ba-modal-close > i {
     font-size: 24px; }
     @media screen and (min-width: 991px) {
@@ -1255,6 +1260,9 @@ ul {
 
 .ba-modal-is-open {
   overflow: hidden; }
+
+.slick-next:before, .slick-prev:before {
+  color: black !important; }
 
 /*=====================================
 .portfolio-navi {
