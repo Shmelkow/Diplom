@@ -151,10 +151,10 @@
 
 .ba-hero {
     background-color: $backgroundColor;
-    padding-top: 1rem;
+    padding: 1rem;
     @media screen and (min-width: 991px) {
         width: 69%;
-        padding-top: 50px;
+        padding: 50px 0 0;
     }
     &-wrapper {
         @media screen and (min-width: 991px) {
@@ -180,7 +180,6 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 0 1rem 1rem;
         @media screen and (min-width: 991px) {
             flex-direction: column;
             padding: 0 0 100px;
@@ -197,9 +196,11 @@
         color: #393d3c;
         font-size: 1.5rem;
         text-align: center;
-        margin-bottom: .6em;
+        margin-bottom: .5em;
         @media screen and (min-width: 991px) {
             font-size: 1.125rem;
+            line-height: 16px;
+            margin-top: 5px;
             margin-bottom: 61px;
             text-align: left;
         }

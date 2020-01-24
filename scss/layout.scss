@@ -12,10 +12,11 @@ $menuColor: #f8c255;
 
 $backgroundColor: #e9eae2;//основной фон
 
+$slick-arrow-color: #000;
 
 * {
     box-sizing: border-box;
-    border: 1px dashed black;
+    //border: 1px dashed black;
 }
 
 @media screen and (max-width: 360px) {

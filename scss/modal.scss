@@ -1,0 +1,240 @@
+.ba-modal {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, .45);
+    z-index: 20;
+    //display: none;
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+    &-content {
+        width: 95vw;
+        height: 95vh;
+        position: relative;
+        background-color: #fff;
+        padding: 15px 11.5%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        &-info {
+
+        }
+        &-wrapper {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+    &-info {
+        @media screen and (min-width: 991px) {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 500px;
+        }
+    }
+    &-picture {
+        @media screen and (min-width: 991px) {
+            //min-height: 500px;
+            //background-color: $secondaryColor;
+        }
+        &__slider {
+            width: 33%;
+            margin: 0 auto;
+        }
+        &__item {
+            height: 120px;
+            width: 120px;
+            padding: 10px;
+            &_large {
+                width: 100%;
+                height: 100%;
+            }
+        }
+        &__img {
+            border: 1px solid #d4d5cd;
+            &_large {
+                //min-height: 500px;
+                height: 50vh;
+                width: 100%;
+                object-fit: cover;
+                object-position: center;
+                border: none;
+            }
+        }
+    }
+    &__title {
+        /* Style for "FONDUE" */
+        color: #333333;
+        font-size: 30px;
+        font-weight: 300;
+        line-height: 40px;
+    }
+    &__list {
+        margin-bottom: 45px;
+    }
+    &__item {
+        /* Style for "Project As" */
+        color: #333333;
+        font-size: 14px;
+        font-weight: 300;
+        line-height: 14px;
+    }
+    &__text {
+        /* Style for "Merging di" */
+        color: #0b0b0b;
+        font-size: 14px;
+        font-weight: 300;
+        line-height: 14px;
+        text-transform: none;
+        &:last-child {
+            margin-top: 20px;
+        }
+    }
+    &__slider {
+        min-height: 130px;
+        padding: 15px 0;
+    }
+    &-media {
+        &__list {
+            display: flex;
+            justify-content: center;
+        }
+        &__item {
+            &:not(:first-child) {
+                margin-left: 1rem;
+                @media screen and (min-width: 991px) {
+                    margin-left: 30px;
+                }
+            } 
+        }
+        &__link {
+            font-size: 1rem;
+            @media screen and (min-width: 991px) {
+                font-size: 1.5rem;
+            }
+            &:hover {
+                color: $menuColor;
+            }
+        }
+    }
+}
+
+.ba-modal--open{
+    display: flex;
+};
+
+//кнопка
+.ba-modal-close{
+    position: absolute;
+    border: 1px solid #000;
+    top: 5vh;
+    right: 10%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 80px;
+    min-height: 80px;
+    margin-left: 8px;
+    @media screen and (max-width: 360px) {
+        min-width: 40px;
+        min-height: 40px;
+    }
+    @media screen and (min-width: 991px) {
+        width: 100px;
+        height: 100px;
+        top: 50px;
+        right: 50px;
+    }
+    &>i {
+        font-size: 24px;
+        @media screen and (min-width: 991px) {
+            font-size: 34px;
+        }
+    }
+    &.pushed {
+        background: $menuColor;
+        border: $menuColor;
+        @media screen and (min-width: 991px) {
+            outline: none;
+        }   
+    }
+    &:hover {
+        background-color: $menuColor;
+    }
+}
+
+.ba-modal__image {
+    max-width: 100%;
+    height: auto;
+    max-height: 40vh;
+}
+
+.ba-modal-is-open{
+    overflow: hidden;
+}
+//оформление слайдера
+
+.slick-next:before, .slick-prev:before {
+    color: black !important;
+}
+
+/*=====================================
+.portfolio-navi {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	list-style: none;	
+}
+	.portfolio-navi a {
+	  padding-top: 5px;
+	  display: -webkit-box;
+	  display: -ms-flexbox;
+	  display: flex;
+	  text-decoration: none;
+	  color: #3c4955;
+	  border-radius: 2px;
+	  font-size: 16px;
+	  -webkit-box-align: center;
+	  -ms-flex-align: center;
+	  align-items: center;
+	  -webkit-box-pack: center;
+	  -ms-flex-pack: center;
+	  justify-content: center;
+	  min-width: 135px;
+	  height: 36px;
+	  background-color: #eaeaea;
+	  text-align: center;
+	  margin: 0 7px;
+	  border-radius: 2px; }
+	  .portfolio-navi a.active {
+		background-color: tomato;
+		color: #fff; }
+  
+  .portfolio-item {
+	height: 300px;
+	width: 29.35%;
+	margin: 2%; }
+	/* .ba-bread {
+	  background-color: red;
+	  height: 350px; }
+	.ba-pizza {
+	  background-color: green;
+	  height: 380px; }
+	.ba-other {
+	  background-color: blue; } 
+	
+  
+  .items-navi .nav-btn {
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+    pointer-events: none; }
+    
+    =====================================*/

@@ -149,15 +149,7 @@ ul {
             @media screen and (min-width: 991px) {
                 font-size: 0.8125rem;
             } 
-            &:focus, &:active {
-                color: #000000;
-                transition: 0.3s;
-                &::before {
-                    transform: translateX(4em);
-                    transition: 0.3s;
-                }
-            }
-            &:hover {
+            &:focus, &:active, &:hover {
                 color: #000000;
                 transition: 0.3s;
                 &::before {
@@ -371,7 +363,7 @@ ul {
         background-size: auto 350px;
         background-position-x: center;
         background-position-y: top;
-        padding: 0 0 30px 0;
+        padding: 0 1.5rem 30px;
         display: flex;
         justify-content: center;
         align-items: flex-end;
@@ -582,8 +574,7 @@ ul {
             width: 31%;
             min-height: 500px;
             flex-direction: column-reverse;
-            justify-content: space-between;
-            align-items: flex-end;
+            align-items: flex-start;
             background-image: linear-gradient(
                 to left top,
                 $studioColor 50%,
@@ -594,7 +585,7 @@ ul {
                 bottom: 150px;
             }
             & .ba-projects-main__title {
-                margin-right: 23.5%;
+                margin-left: 50%;
             }
         }
         
@@ -903,7 +894,7 @@ ul {
 #map {
     width: 100%;
     height: 50vh;
-    background-color: #e9eae2;
+    background-color: #c1c2bb;
     @media screen and (min-width: 991px) {
         min-height: 644px;
         width: 50%;
@@ -911,19 +902,36 @@ ul {
 }
 
 .ba-footer {
+    background-color: #e9eae2;
     @media screen and (min-width: 991px) {
         min-height: 644px;
         width: 100%;
+        display: flex;
     }
     &-content {
+        padding: 1rem;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
         @media screen and (min-width: 991px) {
             width: 50%;
+            padding: 150px 10% 50px 7.7%;;
+        }
+        & .ba-hero__title {
+            display: none;
+            @media screen and (min-width: 991px) {
+                display: block;
+            }
+        }
+    }
+    &__info {
+        width: 50%;
+        @media screen and (min-width: 991px) {
+            display: block;
         }
     }
     &-adress {
-        &__list {
-            
-        }
+        
         &__item {
             @extend .ba-header-adress__item;
             color: #333333;
@@ -931,12 +939,60 @@ ul {
     }
     &-contact {
         &__list {
-            
+            margin-top: 2rem;
+            @media screen and (min-width: 991px) {
+                margin-top: 1rem;
+            }
         }
         &__item {
             @extend .ba-header-adress__item;
             color: #333333;
         }
     }
-    
+    & .ba-hero__logo {
+        width: 50%;
+        @media screen and (min-width: 991px) {
+            padding: 0 0 0 0;
+            margin-left: auto;
+            width: auto;
+        }
+    }
+    & .ba-hero__title {
+        display: none;
+        @media screen and (min-width: 991px) {
+            display: block;
+        }
+    }
+    & .ba-hero__media {
+        flex-direction: column;
+        @media screen and (min-width: 991px) {
+            flex-direction: row;
+            margin-bottom: auto;
+        }
+    }
+    & .ba-media__link{
+        &:not(:first-child) {
+            margin-top: 0.4rem;
+            @media screen and (min-width: 991px) {
+                margin-top: 0;
+            }
+        } 
+        &:first-child {
+            margin-left: 1rem;
+            @media screen and (min-width: 991px) {
+                margin-left: 0;
+            }
+        }
+    }
+    &__copyright {
+        color: #191919;
+        font-size: 0.6rem;
+        text-transform: none;
+        margin: 0 auto;
+        margin-top: 1rem;
+        @media screen and (min-width: 991px) {
+            font-size: 0.75rem;
+            align-self: flex-end;
+        }
+    }
 }
