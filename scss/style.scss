@@ -82,6 +82,10 @@ ul {
             font-size: 0.75rem;
         }
     }
+    &__text {
+        display: none;
+        font-size: 0.875rem;
+    }
 
     &-main {
         background-color: $secondaryColor;
@@ -214,6 +218,9 @@ ul {
     }
     &__btn {
         font-size: 1.5rem;
+        &_red {
+            color: red;
+        }
     }
 }
     

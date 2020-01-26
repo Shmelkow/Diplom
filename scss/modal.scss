@@ -6,8 +6,8 @@
     height: 100vh;
     background-color: rgba(0, 0, 0, .45);
     z-index: 20;
-    //display: none;
-    display: flex;
+    display: none;
+    //display: flex;
 
     align-items: center;
     justify-content: center;
@@ -16,18 +16,22 @@
         height: 95vh;
         position: relative;
         background-color: #fff;
-        padding: 15px 11.5%;
+        padding: 1rem;
         display: flex;
         justify-content: center;
         align-items: center;
-        &-info {
-
+        @media screen and (min-width: 991px) {
+            padding: 15px 11.5%;
         }
         &-wrapper {
             width: 100%;
             display: flex;
             justify-content: center;
             align-items: center;
+            flex-direction: column-reverse;
+            @media screen and (min-width: 991px) {
+                flex-direction: row;
+            }
         }
     }
     &-info {
@@ -44,13 +48,21 @@
             //background-color: $secondaryColor;
         }
         &__slider {
-            width: 33%;
+            width: 35%;
             margin: 0 auto;
+            @media screen and (min-width: 991px) {
+                width: 35%;
+            }
         }
         &__item {
-            height: 120px;
-            width: 120px;
+            height: 60px;
+            //width: 120px;
             padding: 10px;
+            @media screen and (min-width: 991px) {
+                height: 100px;
+                //width: 120px;
+            }
+
             &_large {
                 width: 100%;
                 height: 100%;
@@ -59,42 +71,68 @@
         &__img {
             border: 1px solid #d4d5cd;
             &_large {
-                //min-height: 500px;
-                height: 50vh;
+                height: 35vh;
                 width: 100%;
                 object-fit: cover;
                 object-position: center;
                 border: none;
+                @media screen and (min-width: 991px) {
+                    //min-height: 500px;
+                    height: 50vh;
+                }
+                
             }
         }
+    }
+    &__info {
+        margin-bottom: 2rem;
+        @media screen and (min-width: 991px) {
+            margin-bottom: 0;
+        }
+
     }
     &__title {
         /* Style for "FONDUE" */
         color: #333333;
-        font-size: 30px;
+        font-size: 1.5rem;
         font-weight: 300;
-        line-height: 40px;
+        line-height: 1.33em;
+        @media screen and (min-width: 991px) {
+            font-size: 1.875rem;
+            line-height: 1.33em;
+
+        }
+
     }
     &__list {
-        margin-bottom: 45px;
+        margin-bottom: 1rem;
+        @media screen and (min-width: 991px) {
+            margin-bottom: 45px;
+        }
     }
-    &__item {
+    & .ba-projects__item, &__item {
         /* Style for "Project As" */
         color: #333333;
-        font-size: 14px;
+        font-size: 0.875rem;
         font-weight: 300;
-        line-height: 14px;
+        line-height: 1em;
     }
     &__text {
-        /* Style for "Merging di" */
         color: #0b0b0b;
-        font-size: 14px;
+        font-size: 0.75rem;
         font-weight: 300;
-        line-height: 14px;
+        line-height: 1em;
         text-transform: none;
         &:last-child {
-            margin-top: 20px;
+            margin-top: 1rem;
         }
+        @media screen and (min-width: 991px) {
+            font-size: 0.875rem;
+            &:last-child {
+                margin-top: 20px;
+            }
+        }
+
     }
     &__slider {
         min-height: 130px;
@@ -104,6 +142,11 @@
         &__list {
             display: flex;
             justify-content: center;
+            margin-top: 1rem;
+            @media screen and (min-width: 991px) {
+                margin-top: 0;
+            }
+
         }
         &__item {
             &:not(:first-child) {
@@ -133,14 +176,11 @@
 .ba-modal-close{
     position: absolute;
     border: 1px solid #000;
-    top: 5vh;
-    right: 10%;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    min-width: 80px;
-    min-height: 80px;
-    margin-left: 8px;
+    top: 10px;
+    right: 10px;
+    z-index: 10;
+    min-width: 40px;
+    min-height: 40px;
     @media screen and (max-width: 360px) {
         min-width: 40px;
         min-height: 40px;
@@ -179,7 +219,6 @@
     overflow: hidden;
 }
 //оформление слайдера
-
 .slick-next:before, .slick-prev:before {
     color: black !important;
 }
