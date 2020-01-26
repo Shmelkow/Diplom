@@ -17,37 +17,150 @@ $(document).ready(function() {
       let id  = $(this).attr('href');
       let top = $(id).offset().top;
         $('body,html').animate({scrollTop: top}, 1500);
-  });  
-  // ===========  slider  ============  //
-  $('.ba-modal-picture').slick({
-      slidesToShow: 1,
-      slidesToScroll: 1,
-      arrows: false,
-      fade: true,
-      asNavFor: '.ba-modal-picture__slider'
   });
-  $('.ba-modal-picture__slider').slick({
-      slidesToShow: 2,
-      slidesToScroll: 1,
-      asNavFor: '.ba-modal-picture',
-      dots: false,
-      arrows: true,
-      centerMode: false,
-      focusOnSelect: true
-  });
-//  ===========================================================================  //
+//  ========================  Счетчик Like  ==============================  //
+function numberOfLikes(projectName) {
+  let likesCountText = $(`.${projectName} .ba-heart__counter`).text();
+  let likesCountArray = likesCountText.split(" ");
+  let likesCountNumber = +likesCountArray[1];
+  return likesCountNumber;
+}
+const likesFondue = numberOfLikes("ba-fondue");
+const likesPotter = numberOfLikes("ba-potter");
+const likesLouis = numberOfLikes("ba-louis");
+const likesP22 = numberOfLikes("ba-p22");
+const likesTabano = numberOfLikes("ba-tabano");
+const likesSesann = numberOfLikes("ba-sesann");
+const likesAlessi = numberOfLikes("ba-alessi");
+const likesFiji = numberOfLikes("ba-fiji");
 
-  $(".ba-gallery__img").on("click", function() {
+console.log(likesFondue);
+
+//  ========================  Кнопка Like  ==============================  //
+
+$(".ba-heart__btn").on("click", function() {
+
+  let projectsName = $(this).parent().parent().attr("class");
+  //console.log("Секция projects:", projectsName);
+
+  if (projectsName === 'ba-button-wrapper') {
+      projectsName = $(this).parent().parent().parent().attr("class");
+  }
+
+  let buttonHeart = `.${projectsName} .ba-heart__btn > i`;
+  //console.log("buttonHeart:", buttonHeart);
+  $(buttonHeart).toggleClass("far fas");
+  $(buttonHeart).toggleClass("ba-heart__btn_red");
+
+  let likedHeartPlus = numberOfLikes(projectsName);
+  let likedHeartMinus;
+  switch (projectsName) {
+    case "ba-fondue":
+      likedHeartMinus = likesFondue;
+      break;
+    case "ba-potter":
+      likedHeartMinus = likesPotter;
+      break;
+    case "ba-louis":
+      likedHeartMinus = likesLouis;
+      break;
+    case "ba-p22":
+      likedHeartMinus = likesP22;
+      break;
+    case "ba-tabano":
+      likedHeartMinus = likesTabano;
+      break;
+    case "ba-sesann":
+      likedHeartMinus = likesSesann;
+      break;
+    case "ba-alessi":
+      likedHeartMinus = likesAlessi;
+      break;
+    case "ba-fiji":
+      likedHeartMinus = likesFiji;
+      break;
+  }
+  likedHeartPlus++;
+  //console.log("likedHeartPlus: ", likedHeartPlus);
+  //console.log("likedHeartMinus: ", likedHeartMinus);
+  if (likedHeartPlus - likedHeartMinus == 1) {
+    $(`.${projectsName} .ba-heart__counter`).html("<span>+</span> " + likedHeartPlus);
+  } else {
+    $(`.${projectsName} .ba-heart__counter`).html("<span>+</span> " + likedHeartMinus);
+  }
+});
+
+
+//  ======================  Кнопка View project  =========================  //
+
+  $(".ba-view__btn").on("click", function() {
     //$(".ba-modal-content-wrapper").append('<p>' + $(this).attr("src") + '</p>');
-    let imgSrc = $(this).attr("src"),
+    
+   /*  let imgSrc = $(this).attr("src"),
         $modalImage = $("<img>");
-
     $modalImage.attr("src", imgSrc);
+    $(".ba-modal-content-wrapper").append($modalImage); */
 
-    $(".ba-modal-content-wrapper").append($modalImage);
     openModal();
 
+    let projectsName = $(this).parent().parent().attr("class");
+    console.log("Секция projects:", projectsName);
+
+    if (projectsName === 'ba-button-wrapper') {
+        projectsName = $(this).parent().parent().parent().attr("class");
+    }
+
+    let projectsNameInfo = "." + projectsName + "__info";
+    console.log("Имя__info:", projectsNameInfo);
+
+    let projectsTitle = $(projectsNameInfo).children(".ba-projects__title").text();
+    console.log("Заголовок:", projectsTitle);
+
+    $(".ba-modal__info").children(".ba-modal__title").text(projectsTitle);
+
+    let projectsList = $(projectsNameInfo).children(".ba-projects__list").children();
+    console.log("Массив__list:", projectsList);//массив
+    
+    $(projectsList).clone().appendTo(".ba-modal__list");
+
+    let projectsText1 = $(projectsNameInfo).children(".ba-projects__text_p1").text();
+    $(".ba-modal__text_p1").text(projectsText1);
+
+    let projectsText2 = $(projectsNameInfo).children(".ba-projects__text_p2").text();
+    $(".ba-modal__text_p2").text(projectsText1);
+    
+    let pictureList = document.querySelectorAll(".ba-modal-picture__item");
+    console.log("pictureList:", pictureList);
+
+    let modalPicture = [];
+    for (let i = 0; i < 12; i++) {
+        modalPicture[i] = document.createElement("img");
+        $(modalPicture[i]).attr("src", `images/${projectsName}/${projectsName}-${i%5}.jpg`);
+        $(modalPicture[i]).addClass("ba-modal-picture__img ba-img");
+        $(modalPicture[i]).attr("alt", projectsName);
+        //console.log(modalPicture[i]);
+    }
+    
+    for (let i = 0; i < 12; i++) {
+        pictureList[i].appendChild(modalPicture[i]);
+    }
+
+    let pictureListLarge = document.querySelectorAll(".ba-modal-picture__item_large");
+    console.log("pictureListLarge:", pictureListLarge);
+
+    let modalPictureLarge = [];
+    for (let i = 0; i < 5; i++) {
+        modalPictureLarge[i] = document.createElement("img");
+        $(modalPictureLarge[i]).attr("src", `images/${projectsName}/${projectsName}-${i}.jpg`);
+        $(modalPictureLarge[i]).addClass("ba-modal-picture__img ba-modal-picture__img_large");
+        $(modalPictureLarge[i]).attr("alt", projectsName);
+        //console.log(modalPictureLarge[i]);
+    }
+    for (let i = 0; i < 5; i++) {
+        pictureListLarge[i].appendChild(modalPictureLarge[i]);
+    }    
   });
+
 
   let openModal = function() {
     $(".ba-modal").addClass("ba-modal--open");
@@ -55,22 +168,20 @@ $(document).ready(function() {
     $("body").addClass("ba-modal-is-open");
 
     $(document).on("keydown", function(event) {
-
         if (event.keyCode == 27) {
             closeModal();
         }
-
     });
   };
 
   let closeModal = function() {
     $(".ba-modal").removeClass("ba-modal--open");
     $("body").removeClass("ba-modal-is-open");
-
-    $(".ba-modal-content-wrapper").empty();
-
+    //$(".ba-modal-content-wrapper").empty();
+    $(".ba-modal__list").empty();
+    $(".ba-modal-picture__item").empty();
+    
     $(document).off("keydown", closeModal);
-
   };
 
   $(".ba-modal-close").on("click", closeModal);
@@ -89,8 +200,25 @@ $(document).ready(function() {
         closeModal();
     };
   });
-//  ===========================================================================  //
+//  ======================================================================  //
 
+// ===========  slider  ============  //
+$('.ba-modal-picture').slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: false,
+    fade: true,
+    asNavFor: '.ba-modal-picture__slider'
+});
+$('.ba-modal-picture__slider').slick({
+    slidesToShow: 2,
+    slidesToScroll: 1,
+    asNavFor: '.ba-modal-picture',
+    dots: false,
+    arrows: true,
+    centerMode: false,
+    focusOnSelect: true
+});
 
 });
 //  ================ The End of function Ready  ===================//

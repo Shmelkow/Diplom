@@ -382,6 +382,10 @@ ul {
     .ba-projects__item {
       font-size: 0.75rem; } }
 
+.ba-projects__text {
+  display: none;
+  font-size: 0.875rem; }
+
 .ba-projects-main {
   background-color: #ebb240;
   display: flex;
@@ -491,6 +495,8 @@ ul {
 
 .ba-heart__btn {
   font-size: 1.5rem; }
+  .ba-heart__btn_red {
+    color: red; }
 
 .ba-fondue {
   background-color: #ffffff;
@@ -1132,7 +1138,7 @@ ul {
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.45);
   z-index: 20;
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center; }
   .ba-modal-content {
@@ -1140,15 +1146,22 @@ ul {
     height: 95vh;
     position: relative;
     background-color: #fff;
-    padding: 15px 11.5%;
+    padding: 1rem;
     display: flex;
     justify-content: center;
     align-items: center; }
+    @media screen and (min-width: 991px) {
+      .ba-modal-content {
+        padding: 15px 11.5%; } }
     .ba-modal-content-wrapper {
       width: 100%;
       display: flex;
       justify-content: center;
-      align-items: center; }
+      align-items: center;
+      flex-direction: column-reverse; }
+      @media screen and (min-width: 991px) {
+        .ba-modal-content-wrapper {
+          flex-direction: row; } }
   @media screen and (min-width: 991px) {
     .ba-modal-info {
       display: flex;
@@ -1156,52 +1169,80 @@ ul {
       justify-content: space-between;
       min-height: 500px; } }
   .ba-modal-picture__slider {
-    width: 33%;
+    width: 35%;
     margin: 0 auto; }
+    @media screen and (min-width: 991px) {
+      .ba-modal-picture__slider {
+        width: 35%; } }
   .ba-modal-picture__item {
-    height: 120px;
-    width: 120px;
+    height: 60px;
     padding: 10px; }
+    @media screen and (min-width: 991px) {
+      .ba-modal-picture__item {
+        height: 100px; } }
     .ba-modal-picture__item_large {
       width: 100%;
       height: 100%; }
   .ba-modal-picture__img {
     border: 1px solid #d4d5cd; }
     .ba-modal-picture__img_large {
-      height: 50vh;
+      height: 35vh;
       width: 100%;
       object-fit: cover;
       object-position: center;
       border: none; }
+      @media screen and (min-width: 991px) {
+        .ba-modal-picture__img_large {
+          height: 50vh; } }
+  .ba-modal__info {
+    margin-bottom: 2rem; }
+    @media screen and (min-width: 991px) {
+      .ba-modal__info {
+        margin-bottom: 0; } }
   .ba-modal__title {
     /* Style for "FONDUE" */
     color: #333333;
-    font-size: 30px;
+    font-size: 1.5rem;
     font-weight: 300;
-    line-height: 40px; }
+    line-height: 1.33em; }
+    @media screen and (min-width: 991px) {
+      .ba-modal__title {
+        font-size: 1.875rem;
+        line-height: 1.33em; } }
   .ba-modal__list {
-    margin-bottom: 45px; }
-  .ba-modal__item {
+    margin-bottom: 1rem; }
+    @media screen and (min-width: 991px) {
+      .ba-modal__list {
+        margin-bottom: 45px; } }
+  .ba-modal .ba-projects__item, .ba-modal__item {
     /* Style for "Project As" */
     color: #333333;
-    font-size: 14px;
+    font-size: 0.875rem;
     font-weight: 300;
-    line-height: 14px; }
+    line-height: 1em; }
   .ba-modal__text {
-    /* Style for "Merging di" */
     color: #0b0b0b;
-    font-size: 14px;
+    font-size: 0.75rem;
     font-weight: 300;
-    line-height: 14px;
+    line-height: 1em;
     text-transform: none; }
     .ba-modal__text:last-child {
-      margin-top: 20px; }
+      margin-top: 1rem; }
+    @media screen and (min-width: 991px) {
+      .ba-modal__text {
+        font-size: 0.875rem; }
+        .ba-modal__text:last-child {
+          margin-top: 20px; } }
   .ba-modal__slider {
     min-height: 130px;
     padding: 15px 0; }
   .ba-modal-media__list {
     display: flex;
-    justify-content: center; }
+    justify-content: center;
+    margin-top: 1rem; }
+    @media screen and (min-width: 991px) {
+      .ba-modal-media__list {
+        margin-top: 0; } }
   .ba-modal-media__item:not(:first-child) {
     margin-left: 1rem; }
     @media screen and (min-width: 991px) {
@@ -1221,14 +1262,11 @@ ul {
 .ba-modal-close {
   position: absolute;
   border: 1px solid #000;
-  top: 5vh;
-  right: 10%;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 80px;
-  min-height: 80px;
-  margin-left: 8px; }
+  top: 10px;
+  right: 10px;
+  z-index: 10;
+  min-width: 40px;
+  min-height: 40px; }
   @media screen and (max-width: 360px) {
     .ba-modal-close {
       min-width: 40px;
