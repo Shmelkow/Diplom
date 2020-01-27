@@ -54,6 +54,18 @@ ul {
 }
 
 .ba-projects {
+    @media screen and (min-width: 991px) {
+        position: relative;
+        display: block;
+        //display: grid;
+        /*grid-template:
+            ".        .      ba-fondue ba-fondue ba-potter" minmax(250px, auto) //minmax(250px, 1fr)
+            ".        .      ba-fondue ba-fondue ba-tabano" minmax(250px, auto)
+            "ba-louis ba-p22 ba-p22 ba-p22 ba-tabano" minmax(215px, auto)
+            "ba-louis ba-p22 ba-p22 ba-p22 ba-fiji" minmax(250px, auto)
+            "ba-sesann ba-sesann ba-sesann ba-alessi ." minmax(300px, auto) /
+            20% 11% 18% 20% 31%;*/
+    }
     &__title {
         color: #333333;
         font-size: 1.5rem;
@@ -61,6 +73,7 @@ ul {
         text-align: center;
         margin-bottom: 1rem;
         @media screen and (min-width: 991px) {
+            grid-area: ba-projects;
             font-size: 1.5rem;
             text-align: left;
             margin-bottom: 0.6rem;
@@ -87,12 +100,36 @@ ul {
         font-size: 0.875rem;
     }
 
+    &-grid {
+        @media screen and (min-width: 991px) {
+            /* position: relative;
+            top: -500px;
+            display: flex;
+            align-items: flex-start;
+            flex-wrap: wrap; */
+            display: grid;
+            grid-template:
+            ".        .      ba-fondue ba-fondue ba-potter" minmax(250px, auto) //minmax(250px, 1fr)
+            ".        .      ba-fondue ba-fondue ba-tabano" minmax(250px, auto)
+            "ba-louis ba-p22 ba-p22 ba-p22 ba-tabano" minmax(215px, auto)
+            "ba-louis ba-p22 ba-p22 ba-p22 ba-fiji" minmax(250px, auto)
+            "ba-sesann ba-sesann ba-sesann ba-alessi ." minmax(300px, auto) /
+            20% 11% 18% 20% 31%;
+        }
+    }
+
     &-main {
         background-color: $secondaryColor;
         display: flex;
         align-items: center;
         padding: 0.5rem 0;
         @media screen and (min-width: 991px) {
+            position: absolute;
+            //position: relative;
+            z-index: 10;
+            top: 0;
+            left: 0;
+            margin-bottom: auto;
             width: 31%;
             min-height: 500px;
             flex-direction: column-reverse;
@@ -115,7 +152,7 @@ ul {
             font-size: 2rem;
             @media screen and (min-width: 991px) {
                 font-size: 3rem;
-                margin-right: 8%;
+                margin-right: 10%;
                 flex-grow: 0;
             }  
         }
@@ -123,7 +160,7 @@ ul {
             padding-left: 2rem;
             overflow: hidden;
             @media screen and (min-width: 991px) {
-                margin-right: 55%;
+                margin-right: 48%;
             }
         }
         &__item + &__item {
@@ -224,7 +261,14 @@ ul {
     }
 }
     
-
+/* .ba-grid-main {
+    display: none;
+    @media screen and (min-width: 991px) {
+        display: block;
+        width: 31%;
+        min-height: 500px;
+    }
+} */
 .ba-fondue {        
     background-color: #ffffff;
     background-image: url(../images/img-fondue.jpg);
@@ -235,9 +279,11 @@ ul {
     //align-items: center;
     padding: 0.5rem 1rem;
     @media screen and (min-width: 991px) {
-        width: 38%;
-        min-height: 500px;
-        padding: 80px 0 74px 7%;
+        grid-area: ba-fondue;
+        height: 100%;
+        //width: 38%;
+        //min-height: 500px;
+        padding: 80px 0 74px 17.5%;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -254,9 +300,11 @@ ul {
     padding: 0.5rem 1rem;
     @media screen and (min-width: 991px) {
         background-size: 265px auto;
-        width: 31%;
-        min-height: 250px;
-        padding: 36px 0 25px 3%;
+        grid-area: ba-potter;
+        height: 100%;
+        //width: 31%;
+        //min-height: 250px;
+        padding: 36px 0 25px 9.5%;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -283,12 +331,14 @@ ul {
     background-size: 150px;
     padding: 0.5rem 1rem;
     @media screen and (min-width: 991px) {
-        width: 20%;
-        min-height: 465px;
+        grid-area: ba-louis;
+        height: 100%;
+        //width: 20%;
+        //min-height: 465px;
         background-size: contain;
         background-position-x: right;
         background-position-y: 100%;
-        padding: 40px 0 210px 2%;
+        padding: 40px 0 210px 10%;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -312,8 +362,10 @@ ul {
     background-size: 180px auto;
     padding: 0.5rem 1rem;
     @media screen and (min-width: 991px) {
-        width: 49%;
-        min-height: 465px;
+        grid-area: ba-p22;
+        height: 100%;
+        //width: 49%;
+        //min-height: 465px;
         background-position-x: 33%;
         background-position-y: center;
         background-size: contain;
@@ -363,10 +415,12 @@ ul {
     background-size: 180px auto;
     padding: 0.5rem 1rem;
     @media screen and (min-width: 991px) {
-        position: relative;
-        top: -250px;
-        width: 31%;
-        min-height: 465px;
+        grid-area: ba-tabano;
+        height: 100%;
+        //position: relative;
+        //top: -250px;
+        //width: 31%;
+        //min-height: 465px;
         background-size: auto 350px;
         background-position-x: center;
         background-position-y: top;
@@ -377,7 +431,7 @@ ul {
     }
     &__info {
         @media screen and (min-width: 991px) {
-            margin-right: 15px;
+            margin-right: 12px;
         }
         & + .ba-button-wrapper {
             @media screen and (min-width: 991px) {
@@ -401,8 +455,10 @@ ul {
     background-size: 180px auto;
     padding: 0.5rem 1rem;
     @media screen and (min-width: 991px) {
-        width: 49%;
-        min-height: 300px;
+        grid-area: ba-sesann;
+        height: 100%;
+        //width: 49%;
+        //min-height: 300px;
         background-position-x: center;
         background-position-y: 15%;
         background-size: auto;
@@ -446,9 +502,11 @@ ul {
     padding: 0.5rem 1rem;
     @media screen and (min-width: 991px) {
         background-size: 265px auto;
-        width: 20%;
-        min-height: 300px;
-        padding: 80px 1.5% 38px 1.5%;
+        grid-area: ba-alessi;
+        height: 100%;
+        //width: 20%;
+        //min-height: 300px;
+        padding: 80px 7.5% 38px 7.5%;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -480,14 +538,16 @@ ul {
     background-size: 150px;
     padding: 0.5rem 1rem;
     @media screen and (min-width: 991px) {
-        position: relative;
-        top: -250px;
-        width: 31%;
-        min-height: 250px;
+        grid-area: ba-fiji;
+        height: 100%;
+        //position: relative;
+        //top: -250px;
+        //width: 31%;
+        //min-height: 250px;
         background-size: auto 230px;
         background-position-x: -5%;
         background-position-y: 70%;
-        padding: 43px 5% 21px 0;
+        padding: 43px 16% 21px 0;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -519,6 +579,8 @@ ul {
     padding: 0.5rem 0;
     @media screen and (min-width: 991px) {
         position: absolute;
+        margin-left: auto;
+        z-index: 10;
         bottom: 0;
         right: 0;
         width: 31%;
@@ -529,7 +591,7 @@ ul {
         background-position: left bottom;
         padding: {
             top: 55px;
-            left: 6.66%;
+            left: 21%;
         }
     }
     & .ba-projects-main__list {

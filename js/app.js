@@ -1,3 +1,42 @@
+; (function () {
+  // add isotope
+  //$(".ba-projects-grid").isotope({ filter: '.ba-louis' });
+  $('.portfolio-examp').isotope({
+  });
+
+  let filters = [];
+  $('.portfolio-navi').on('click', 'a', function(event) {
+    event.preventDefault();
+    $(this).toggleClass('active');
+    let isChecked = $(this).hasClass('active');
+    let filter = $(this).attr('data-filter');
+    if (isChecked) {
+      addFilter(filter);
+    } else {
+      removeFilter(filter);
+    }
+
+    console.log(filters);
+    $('.portfolio-examp').isotope({
+      filter: filters.join(',')
+    });
+  });
+  function addFilter( filter ) {
+    if ( filters.indexOf( filter ) == -1 ) {
+    filters.push( filter );
+    filters.join(',')
+    }
+  }
+  function removeFilter( filter ) {
+    let index = filters.indexOf( filter);
+    if ( index != -1 ) {
+    filters.splice( index, 1 );
+    console.log(filters.join(','));
+    }
+  }
+})();
+
+//=======================  START of function Ready =======================//
 $(document).ready(function() {
 
    /*  $(".ba-menu-btn").on("click", function() {
@@ -127,7 +166,7 @@ $(".ba-heart__btn").on("click", function() {
     $(".ba-modal__text_p1").text(projectsText1);
 
     let projectsText2 = $(projectsNameInfo).children(".ba-projects__text_p2").text();
-    $(".ba-modal__text_p2").text(projectsText1);
+    $(".ba-modal__text_p2").text(projectsText2);
     
     let pictureList = document.querySelectorAll(".ba-modal-picture__item");
     console.log("pictureList:", pictureList);
@@ -223,7 +262,7 @@ $('.ba-modal-picture__slider').slick({
 });
 //  ================ The End of function Ready  ===================//
 
-
+//=======================  MAP =======================//
 var map;
 function initMap() {
     let coordinates = {lat: 33.7822237, lng: -118.168492};
