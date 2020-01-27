@@ -1,3 +1,41 @@
+; (function () {
+  // add isotope
+$('.portfolio-examp').isotope({
+});
+
+let filters = [];
+$('.portfolio-navi').on('click', 'a', function(event) {
+  event.preventDefault();
+  $(this).toggleClass('active');
+  let isChecked = $(this).hasClass('active');
+  let filter = $(this).attr('data-filter');
+  if (isChecked) {
+    addFilter(filter);
+  } else {
+    removeFilter(filter);
+  }
+
+  console.log(filters);
+  $('.portfolio-examp').isotope({
+    filter: filters.join(',')
+  });
+});
+function addFilter( filter ) {
+  if ( filters.indexOf( filter ) == -1 ) {
+  filters.push( filter );
+  filters.join(',')
+  }
+}
+function removeFilter( filter ) {
+  let index = filters.indexOf( filter);
+  if ( index != -1 ) {
+  filters.splice( index, 1 );
+  console.log(filters.join(','));
+  }
+}
+})();
+
+//=======================  START of function Ready =======================//
 $(document).ready(function() {
 
    /*  $(".ba-menu-btn").on("click", function() {
@@ -223,7 +261,7 @@ $('.ba-modal-picture__slider').slick({
 });
 //  ================ The End of function Ready  ===================//
 
-
+//=======================  MAP =======================//
 var map;
 function initMap() {
     let coordinates = {lat: 33.7822237, lng: -118.168492};

@@ -58,11 +58,11 @@ ul {
         position: relative;
         display: grid;
         grid-template:
-            "ba-projects-main ba-projects-main ba-fondue ba-fondue ba-potter" minmax(250px, auto) //minmax(250px, 1fr)
-            "ba-projects-main ba-projects-main ba-fondue ba-fondue ba-tabano" minmax(250px, auto)
+            ".        .      ba-fondue ba-fondue ba-potter" minmax(250px, auto) //minmax(250px, 1fr)
+            ".        .      ba-fondue ba-fondue ba-tabano" minmax(250px, auto)
             "ba-louis ba-p22 ba-p22 ba-p22 ba-tabano" minmax(215px, auto)
             "ba-louis ba-p22 ba-p22 ba-p22 ba-fiji" minmax(250px, auto)
-            "ba-sesann ba-sesann ba-sesann ba-alessi ba-timeline" minmax(300px, auto) /
+            "ba-sesann ba-sesann ba-sesann ba-alessi ." minmax(300px, auto) /
             20% 11% 18% 20% 31%;
     }
     &__title {
@@ -105,10 +105,12 @@ ul {
         align-items: center;
         padding: 0.5rem 0;
         @media screen and (min-width: 991px) {
-            grid-area: ba-projects-main;
-            height: 100%;
-            //width: 31%;
-            //min-height: 500px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            margin-bottom: auto;
+            width: 31%;
+            min-height: 500px;
             flex-direction: column-reverse;
             justify-content: space-between;
             align-items: flex-end;
@@ -548,13 +550,11 @@ ul {
     align-items: center;
     padding: 0.5rem 0;
     @media screen and (min-width: 991px) {
-        grid-area: ba-timeline;
-        height: 100%;
-        //position: absolute;
-        //bottom: 0;
-        //right: 0;
-        //width: 31%;
-        //min-height: 300px;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 31%;
+        min-height: 300px;
         display: block;
         background-image: url(../images/line.png);
         background-repeat: no-repeat;
