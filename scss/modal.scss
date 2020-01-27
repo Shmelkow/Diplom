@@ -85,9 +85,13 @@
         }
     }
     &__info {
-        margin-bottom: 2rem;
+        height: 35vh;
+        overflow: scroll;
+        margin-bottom: 0.75rem;
         @media screen and (min-width: 991px) {
             margin-bottom: 0;
+            height: 100%;
+            overflow: hidden;
         }
 
     }
@@ -142,7 +146,7 @@
         &__list {
             display: flex;
             justify-content: center;
-            margin-top: 1rem;
+            margin-top: 0.5rem;
             @media screen and (min-width: 991px) {
                 margin-top: 0;
             }
@@ -175,9 +179,9 @@
 //кнопка
 .ba-modal-close{
     position: absolute;
-    border: 1px solid #000;
-    top: 10px;
-    right: 10px;
+    border: none;
+    top: 0;
+    right: 0;
     z-index: 10;
     min-width: 40px;
     min-height: 40px;
@@ -190,6 +194,8 @@
         height: 100px;
         top: 50px;
         right: 50px;
+        border: 1px solid #000;
+
     }
     &>i {
         font-size: 24px;

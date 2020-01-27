@@ -127,7 +127,7 @@ $(".ba-heart__btn").on("click", function() {
     $(".ba-modal__text_p1").text(projectsText1);
 
     let projectsText2 = $(projectsNameInfo).children(".ba-projects__text_p2").text();
-    $(".ba-modal__text_p2").text(projectsText1);
+    $(".ba-modal__text_p2").text(projectsText2);
     
     let pictureList = document.querySelectorAll(".ba-modal-picture__item");
     console.log("pictureList:", pictureList);
