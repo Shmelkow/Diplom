@@ -359,7 +359,7 @@ ul {
   .ba-projects {
     position: relative;
     display: grid;
-    grid-template: "ba-projects-main ba-projects-main ba-fondue ba-fondue ba-potter" 250px "ba-projects-main ba-projects-main ba-fondue ba-fondue ba-tabano" 250px "ba-louis ba-p22 ba-p22 ba-p22 ba-tabano" 215px "ba-louis ba-p22 ba-p22 ba-p22 ba-fiji" 250px "ba-sesann ba-sesann ba-sesann ba-alessi ba-timeline" 300px/20% 11% 18% 20% 31%; } }
+    grid-template: "ba-projects-main ba-projects-main ba-fondue ba-fondue ba-potter" minmax(250px, auto) "ba-projects-main ba-projects-main ba-fondue ba-fondue ba-tabano" minmax(250px, auto) "ba-louis ba-p22 ba-p22 ba-p22 ba-tabano" minmax(215px, auto) "ba-louis ba-p22 ba-p22 ba-p22 ba-fiji" minmax(250px, auto) "ba-sesann ba-sesann ba-sesann ba-alessi ba-timeline" minmax(300px, auto)/20% 11% 18% 20% 31%; } }
 
 .ba-projects__title {
   color: #333333;
