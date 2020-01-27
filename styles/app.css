@@ -358,8 +358,14 @@ ul {
 @media screen and (min-width: 991px) {
   .ba-projects {
     position: relative;
-    display: grid;
-    grid-template: ".        .      ba-fondue ba-fondue ba-potter" minmax(250px, auto) ".        .      ba-fondue ba-fondue ba-tabano" minmax(250px, auto) "ba-louis ba-p22 ba-p22 ba-p22 ba-tabano" minmax(215px, auto) "ba-louis ba-p22 ba-p22 ba-p22 ba-fiji" minmax(250px, auto) "ba-sesann ba-sesann ba-sesann ba-alessi ." minmax(300px, auto)/20% 11% 18% 20% 31%; } }
+    display: block;
+    /*grid-template:
+            ".        .      ba-fondue ba-fondue ba-potter" minmax(250px, auto) //minmax(250px, 1fr)
+            ".        .      ba-fondue ba-fondue ba-tabano" minmax(250px, auto)
+            "ba-louis ba-p22 ba-p22 ba-p22 ba-tabano" minmax(215px, auto)
+            "ba-louis ba-p22 ba-p22 ba-p22 ba-fiji" minmax(250px, auto)
+            "ba-sesann ba-sesann ba-sesann ba-alessi ." minmax(300px, auto) /
+            20% 11% 18% 20% 31%;*/ } }
 
 .ba-projects__title {
   color: #333333;
@@ -393,6 +399,16 @@ ul {
   display: none;
   font-size: 0.875rem; }
 
+@media screen and (min-width: 991px) {
+  .ba-projects-grid {
+    /* position: relative;
+            top: -500px;
+            display: flex;
+            align-items: flex-start;
+            flex-wrap: wrap; */
+    display: grid;
+    grid-template: ".        .      ba-fondue ba-fondue ba-potter" minmax(250px, auto) ".        .      ba-fondue ba-fondue ba-tabano" minmax(250px, auto) "ba-louis ba-p22 ba-p22 ba-p22 ba-tabano" minmax(215px, auto) "ba-louis ba-p22 ba-p22 ba-p22 ba-fiji" minmax(250px, auto) "ba-sesann ba-sesann ba-sesann ba-alessi ." minmax(300px, auto)/20% 11% 18% 20% 31%; } }
+
 .ba-projects-main {
   background-color: #ebb240;
   display: flex;
@@ -401,6 +417,7 @@ ul {
   @media screen and (min-width: 991px) {
     .ba-projects-main {
       position: absolute;
+      z-index: 10;
       top: 0;
       left: 0;
       margin-bottom: auto;
@@ -509,6 +526,14 @@ ul {
   .ba-heart__btn_red {
     color: red; }
 
+/* .ba-grid-main {
+    display: none;
+    @media screen and (min-width: 991px) {
+        display: block;
+        width: 31%;
+        min-height: 500px;
+    }
+} */
 .ba-fondue {
   background-color: #ffffff;
   background-image: url(../images/img-fondue.jpg);
@@ -756,6 +781,8 @@ ul {
   @media screen and (min-width: 991px) {
     .ba-timeline {
       position: absolute;
+      margin-left: auto;
+      z-index: 10;
       bottom: 0;
       right: 0;
       width: 31%;

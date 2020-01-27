@@ -1,38 +1,39 @@
 ; (function () {
   // add isotope
-$('.portfolio-examp').isotope({
-});
-
-let filters = [];
-$('.portfolio-navi').on('click', 'a', function(event) {
-  event.preventDefault();
-  $(this).toggleClass('active');
-  let isChecked = $(this).hasClass('active');
-  let filter = $(this).attr('data-filter');
-  if (isChecked) {
-    addFilter(filter);
-  } else {
-    removeFilter(filter);
-  }
-
-  console.log(filters);
+  //$(".ba-projects-grid").isotope({ filter: '.ba-louis' });
   $('.portfolio-examp').isotope({
-    filter: filters.join(',')
   });
-});
-function addFilter( filter ) {
-  if ( filters.indexOf( filter ) == -1 ) {
-  filters.push( filter );
-  filters.join(',')
+
+  let filters = [];
+  $('.portfolio-navi').on('click', 'a', function(event) {
+    event.preventDefault();
+    $(this).toggleClass('active');
+    let isChecked = $(this).hasClass('active');
+    let filter = $(this).attr('data-filter');
+    if (isChecked) {
+      addFilter(filter);
+    } else {
+      removeFilter(filter);
+    }
+
+    console.log(filters);
+    $('.portfolio-examp').isotope({
+      filter: filters.join(',')
+    });
+  });
+  function addFilter( filter ) {
+    if ( filters.indexOf( filter ) == -1 ) {
+    filters.push( filter );
+    filters.join(',')
+    }
   }
-}
-function removeFilter( filter ) {
-  let index = filters.indexOf( filter);
-  if ( index != -1 ) {
-  filters.splice( index, 1 );
-  console.log(filters.join(','));
+  function removeFilter( filter ) {
+    let index = filters.indexOf( filter);
+    if ( index != -1 ) {
+    filters.splice( index, 1 );
+    console.log(filters.join(','));
+    }
   }
-}
 })();
 
 //=======================  START of function Ready =======================//
