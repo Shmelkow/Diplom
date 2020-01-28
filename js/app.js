@@ -1,22 +1,6 @@
 //=======================  START of function Ready =======================//
 $(document).ready(function() {
 
-  /* $(window).on("scroll", function () {
-    console.log( "window.pageYOffset: " , window.pageYOffset);
-    if ($(window).scrollTop() < 100) {
-      $(".ba-modal").css({
-        "display":"block", 
-        "position": "relative"
-      });
-    }else if ($(window).scrollTop() < 500) {
-      $(".ba-modal").css({
-        "display":"none", 
-        "position": "fixed"
-      });
-    }
-    
-  }); */
-
   $(".ba-menu-btn").on("click", function() {
       $(".ba-menu").toggleClass("open");
       $(".ba-menu-btn i").toggleClass("fa-bars fa-times");
@@ -111,12 +95,15 @@ $(".ba-heart__btn").on("click", function() {
         $modalImage = $("<img>");
     $modalImage.attr("src", imgSrc);
     $(".ba-modal-content-wrapper").append($modalImage); */
-    // $('.ba-modal-picture').slick();
-    // $('.ba-modal-picture__slider').slick();
-
+    
     openModal();
+    $(".ba-modal-picture").not(".slick-initialized").slick();
+    $(".ba-modal-picture").slick("refresh");
+    $(".ba-modal-picture__slider").not(".slick-initialized").slick();
+    $(".ba-modal-picture__slider").slick("refresh");
 
-    let projectsName = $(this).parent().parent().attr("class");
+
+    let projectsName = $(this).parent().parent().attr("class");//переделать на ID!!!
     console.log("Секция projects:", projectsName);
 
     if (projectsName === 'ba-button-wrapper') {
@@ -232,6 +219,7 @@ $('.ba-modal-picture__slider').slick({
     centerMode: false,
     focusOnSelect: true
 });
+
 
 });
 //  ================ The End of function Ready  ===================//

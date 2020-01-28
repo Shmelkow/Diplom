@@ -57,14 +57,6 @@ ul {
     @media screen and (min-width: 991px) {
         position: relative;
         display: block;
-        //display: grid;
-        /*grid-template:
-            ".        .      ba-fondue ba-fondue ba-potter" minmax(250px, auto) //minmax(250px, 1fr)
-            ".        .      ba-fondue ba-fondue ba-tabano" minmax(250px, auto)
-            "ba-louis ba-p22 ba-p22 ba-p22 ba-tabano" minmax(215px, auto)
-            "ba-louis ba-p22 ba-p22 ba-p22 ba-fiji" minmax(250px, auto)
-            "ba-sesann ba-sesann ba-sesann ba-alessi ." minmax(300px, auto) /
-            20% 11% 18% 20% 31%;*/
     }
     &__title {
         color: #333333;
@@ -101,20 +93,73 @@ ul {
     }
 
     &-grid {
-        @media screen and (min-width: 991px) {
-            /* position: relative;
-            top: -500px;
-            display: flex;
-            align-items: flex-start;
-            flex-wrap: wrap; */
-            display: grid;
-            grid-template:
-            ".        .      ba-fondue ba-fondue ba-potter" minmax(250px, auto) //minmax(250px, 1fr)
-            ".        .      ba-fondue ba-fondue ba-tabano" minmax(250px, auto)
-            "ba-louis ba-p22 ba-p22 ba-p22 ba-tabano" minmax(215px, auto)
-            "ba-louis ba-p22 ba-p22 ba-p22 ba-fiji" minmax(250px, auto)
-            "ba-sesann ba-sesann ba-sesann ba-alessi ." minmax(300px, auto) /
-            20% 11% 18% 20% 31%;
+        
+        &--all {
+            @media screen and (min-width: 991px) {
+                /* position: relative;
+                top: -500px;
+                display: flex;
+                align-items: flex-start;
+                flex-wrap: wrap; */
+                display: grid;
+                grid-template:
+                "ba-projects-main ba-projects-main ba-fondue ba-fondue ba-potter" minmax(250px, auto) //minmax(250px, 1fr)
+                "ba-projects-main ba-projects-main ba-fondue ba-fondue ba-tabano" minmax(250px, auto)
+                "ba-louis ba-p22 ba-p22 ba-p22 ba-tabano" minmax(215px, auto)
+                "ba-louis ba-p22 ba-p22 ba-p22 ba-fiji" minmax(250px, auto)
+                "ba-sesann ba-sesann ba-sesann ba-alessi ba-timeline" minmax(300px, auto) /
+                20% 11% 18% 20% 31%;
+            }
+        }
+        &--house {
+            @media screen and (min-width: 991px) {
+                display: grid;
+                grid-template:
+                ".        .      ba-fondue ba-fondue ba-potter" minmax(250px, auto) //minmax(250px, 1fr)
+                ".        .      ba-fondue ba-fondue ba-tabano" minmax(250px, auto)
+                "ba-louis ba-p22 ba-p22 ba-p22 ba-tabano" minmax(215px, auto)
+                "ba-louis ba-p22 ba-p22 ba-p22 ba-fiji" minmax(250px, auto)
+                "ba-sesann ba-sesann ba-sesann ba-alessi ." minmax(300px, auto) /
+                20% 11% 18% 20% 31%;
+            }
+        }
+
+        &--commercial {
+            @media screen and (min-width: 991px) {
+                display: grid;
+                grid-template:
+                ".        .      ba-fondue ba-fondue ba-potter" minmax(250px, auto) //minmax(250px, 1fr)
+                ".        .      ba-fondue ba-fondue ba-tabano" minmax(250px, auto)
+                "ba-louis ba-p22 ba-p22 ba-p22 ba-tabano" minmax(215px, auto)
+                "ba-louis ba-p22 ba-p22 ba-p22 ba-fiji" minmax(250px, auto)
+                "ba-sesann ba-sesann ba-sesann ba-alessi ." minmax(300px, auto) /
+                20% 11% 18% 20% 31%;
+            }
+        }
+
+        &--personal {
+            @media screen and (min-width: 991px) {
+                display: grid;
+                grid-template:
+                ".        .      ba-fondue ba-fondue ba-potter" minmax(250px, auto) //minmax(250px, 1fr)
+                ".        .      ba-fondue ba-fondue ba-tabano" minmax(250px, auto)
+                "ba-louis ba-p22 ba-p22 ba-p22 ba-tabano" minmax(215px, auto)
+                "ba-louis ba-p22 ba-p22 ba-p22 ba-fiji" minmax(250px, auto)
+                "ba-sesann ba-sesann ba-sesann ba-alessi ." minmax(300px, auto) /
+                20% 11% 18% 20% 31%;
+            }
+        }
+        &--studio-lab {
+            @media screen and (min-width: 991px) {
+                display: grid;
+                grid-template:
+                "ba-projects-main ba-projects-main ba-tabano ba-tabano ba-fiji" minmax(250px, auto) //minmax(250px, 1fr)
+                "ba-projects-main ba-projects-main ba-tabano ba-tabano ba-fiji" minmax(250px, auto)
+                "ba-p22 ba-p22 ba-sesann ba-sesann ba-timeline" minmax(215px, auto)
+                "ba-p22 ba-p22 ba-sesann ba-sesann ba-timeline" minmax(250px, auto) /
+                //"ba-p22 ba-p22 ba-p22 . ." minmax(300px, auto) /
+                20% 11% 18% 20% 31%;
+            }
         }
     }
 
@@ -124,14 +169,15 @@ ul {
         align-items: center;
         padding: 0.5rem 0;
         @media screen and (min-width: 991px) {
-            position: absolute;
-            //position: relative;
-            z-index: 10;
-            top: 0;
-            left: 0;
-            margin-bottom: auto;
-            width: 31%;
-            min-height: 500px;
+            grid-area: ba-projects-main;
+            height: 100%;
+            //position: absolute;
+            // z-index: 10;
+            // top: 0;
+            // left: 0;
+            // margin-bottom: auto;
+            // width: 31%;
+            // min-height: 500px;
             flex-direction: column-reverse;
             justify-content: space-between;
             align-items: flex-end;
@@ -261,14 +307,6 @@ ul {
     }
 }
     
-/* .ba-grid-main {
-    display: none;
-    @media screen and (min-width: 991px) {
-        display: block;
-        width: 31%;
-        min-height: 500px;
-    }
-} */
 .ba-fondue {        
     background-color: #ffffff;
     background-image: url(../images/img-fondue.jpg);
@@ -578,13 +616,15 @@ ul {
     align-items: center;
     padding: 0.5rem 0;
     @media screen and (min-width: 991px) {
-        position: absolute;
-        margin-left: auto;
-        z-index: 10;
-        bottom: 0;
-        right: 0;
-        width: 31%;
-        min-height: 300px;
+        grid-area: ba-timeline;
+        height: 100%;
+        // position: absolute;
+        // margin-left: auto;
+        // z-index: 10;
+        // bottom: 0;
+        // right: 0;
+        // width: 31%;
+        // min-height: 300px;
         display: block;
         background-image: url(../images/line.png);
         background-repeat: no-repeat;
