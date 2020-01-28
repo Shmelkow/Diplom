@@ -13,6 +13,34 @@ $(document).ready(function() {
       let top = $(id).offset().top;
         $('body,html').animate({scrollTop: top}, 1500);
   });
+//  ========================  Фильтр Projects  ==============================  //
+
+    $("#showAll").on("click", function() {
+      $("#grid-list").removeClass();
+      $("#grid-list").addClass("ba-projects-grid--all");
+    });
+
+    $("#showHouse").on("click", function() {
+      $("#grid-list").removeClass();
+      $("#grid-list").addClass("ba-projects-grid--house");
+    });
+
+    $("#showCommercial").on("click", function() {
+      $("#grid-list").removeClass();
+      $("#grid-list").addClass("ba-projects-grid--commercial");
+    });
+
+    $("#showPersonal").on("click", function() {
+      $("#grid-list").removeClass();
+      $("#grid-list").addClass("ba-projects-grid--personal");
+    });
+
+    $("#showStudioLab").on("click", function() {
+      $("#grid-list").removeClass();
+      $("#grid-list").addClass("ba-projects-grid--studio-lab");
+    });
+
+
 //  ========================  Счетчик Like  ==============================  //
 function numberOfLikes(projectName) {
   let likesCountText = $(`.${projectName} .ba-heart__counter`).text();

@@ -117,7 +117,7 @@
 
     display: none;
     margin: 0;
-    padding: 0;
+    padding: 0.5rem 1.6rem 0.5rem 0.5rem;
     list-style: none;
 
     @media screen and (min-width: 991px) {
@@ -125,8 +125,7 @@
         top: 0;
         right: 60%;
         height: 120px;
-        padding-right: 38px;
-        padding-left: 53px;
+        padding: 0 38px 0 53px;
         &__item + &__item {
             margin-left: 36px;
         }
@@ -137,15 +136,40 @@
         justify-content: space-between;
         align-items: center;
     }
-    
+    &__item {
+        padding-left: 1.25rem;
+        overflow: hidden;
+    }
     &__link {
+        position: relative;
         display: block;
-        padding: 0.5rem 0.5rem;
         color: #ffffff;
         font-family: 'Roboto';
         font-size: 0.875rem;
         line-height: 1.78;
         text-transform: uppercase;
+        &::before {
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            font-size: 1em;
+            content: "\f061";
+            display: inline-block;
+            color: #fff;
+            position: absolute;
+            top: 0;
+            left: -5.2em;
+        }
+        @media screen and (min-width: 991px) {
+            font-size: 0.875rem;
+        } 
+        &:focus, &:active, &:hover {
+            color: #000000;
+            transition: 0.3s;
+            &::before {
+                transform: translateX(4em);
+                transition: 0.3s;
+            }
+        }
     }
 }
 
