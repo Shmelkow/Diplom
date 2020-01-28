@@ -1,55 +1,27 @@
-; (function () {
-  // add isotope
-  //$(".ba-projects-grid").isotope({ filter: '.ba-louis' });
-  $('.portfolio-examp').isotope({
-  });
-
-  let filters = [];
-  $('.portfolio-navi').on('click', 'a', function(event) {
-    event.preventDefault();
-    $(this).toggleClass('active');
-    let isChecked = $(this).hasClass('active');
-    let filter = $(this).attr('data-filter');
-    if (isChecked) {
-      addFilter(filter);
-    } else {
-      removeFilter(filter);
-    }
-
-    console.log(filters);
-    $('.portfolio-examp').isotope({
-      filter: filters.join(',')
-    });
-  });
-  function addFilter( filter ) {
-    if ( filters.indexOf( filter ) == -1 ) {
-    filters.push( filter );
-    filters.join(',')
-    }
-  }
-  function removeFilter( filter ) {
-    let index = filters.indexOf( filter);
-    if ( index != -1 ) {
-    filters.splice( index, 1 );
-    console.log(filters.join(','));
-    }
-  }
-})();
-
 //=======================  START of function Ready =======================//
 $(document).ready(function() {
 
-   /*  $(".ba-menu-btn").on("click", function() {
-        $(".ba-menu").toggle();
-    }); */
+  /* $(window).on("scroll", function () {
+    console.log( "window.pageYOffset: " , window.pageYOffset);
+    if ($(window).scrollTop() < 100) {
+      $(".ba-modal").css({
+        "display":"block", 
+        "position": "relative"
+      });
+    }else if ($(window).scrollTop() < 500) {
+      $(".ba-modal").css({
+        "display":"none", 
+        "position": "fixed"
+      });
+    }
+    
+  }); */
 
   $(".ba-menu-btn").on("click", function() {
       $(".ba-menu").toggleClass("open");
       $(".ba-menu-btn i").toggleClass("fa-bars fa-times");
       $(this).toggleClass("pushed");
   });
-
-  //$(".ba-louis").css("background-image")
 
   $("#menu").on("click","a", function (event) {
       event.preventDefault();
@@ -139,6 +111,8 @@ $(".ba-heart__btn").on("click", function() {
         $modalImage = $("<img>");
     $modalImage.attr("src", imgSrc);
     $(".ba-modal-content-wrapper").append($modalImage); */
+    // $('.ba-modal-picture').slick();
+    // $('.ba-modal-picture__slider').slick();
 
     openModal();
 

@@ -1203,13 +1203,13 @@ ul {
       justify-content: space-between;
       min-height: 500px; } }
   .ba-modal-picture__slider {
-    width: 35%;
+    width: 60%;
     margin: 0 auto; }
     @media screen and (min-width: 991px) {
       .ba-modal-picture__slider {
         width: 35%; } }
   .ba-modal-picture__item {
-    height: 60px;
+    height: 103px;
     padding: 10px; }
     @media screen and (min-width: 991px) {
       .ba-modal-picture__item {
@@ -1229,9 +1229,9 @@ ul {
         .ba-modal-picture__img_large {
           height: 50vh; } }
   .ba-modal__info {
-    height: 35vh;
+    height: 33vh;
     overflow: scroll;
-    margin-bottom: 0.75rem; }
+    margin-bottom: 0; }
     @media screen and (min-width: 991px) {
       .ba-modal__info {
         margin-bottom: 0;
@@ -1277,7 +1277,7 @@ ul {
   .ba-modal-media__list {
     display: flex;
     justify-content: center;
-    margin-top: 0.5rem; }
+    margin-top: 0; }
     @media screen and (min-width: 991px) {
       .ba-modal-media__list {
         margin-top: 0; } }
@@ -1295,7 +1295,7 @@ ul {
       color: #f8c255; }
 
 .ba-modal--open {
-  display: flex; }
+  display: flex !important; }
 
 .ba-modal-close {
   position: absolute;
