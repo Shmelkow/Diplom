@@ -1,47 +1,5 @@
-; (function () {
-  // add isotope
-  //$(".ba-projects-grid").isotope({ filter: '.ba-louis' });
-  $('.portfolio-examp').isotope({
-  });
-
-  let filters = [];
-  $('.portfolio-navi').on('click', 'a', function(event) {
-    event.preventDefault();
-    $(this).toggleClass('active');
-    let isChecked = $(this).hasClass('active');
-    let filter = $(this).attr('data-filter');
-    if (isChecked) {
-      addFilter(filter);
-    } else {
-      removeFilter(filter);
-    }
-
-    console.log(filters);
-    $('.portfolio-examp').isotope({
-      filter: filters.join(',')
-    });
-  });
-  function addFilter( filter ) {
-    if ( filters.indexOf( filter ) == -1 ) {
-    filters.push( filter );
-    filters.join(',')
-    }
-  }
-  function removeFilter( filter ) {
-    let index = filters.indexOf( filter);
-    if ( index != -1 ) {
-    filters.splice( index, 1 );
-    console.log(filters.join(','));
-    }
-  }
-})();
-
 //=======================  START of function Ready =======================//
 $(document).ready(function() {
-
-   /*  $(".ba-menu-btn").on("click", function() {
-        $(".ba-menu").toggle();
-    }); */
 
   $(".ba-menu-btn").on("click", function() {
       $(".ba-menu").toggleClass("open");
@@ -49,14 +7,40 @@ $(document).ready(function() {
       $(this).toggleClass("pushed");
   });
 
-  //$(".ba-louis").css("background-image")
-
   $("#menu").on("click","a", function (event) {
       event.preventDefault();
       let id  = $(this).attr('href');
       let top = $(id).offset().top;
         $('body,html').animate({scrollTop: top}, 1500);
   });
+//  ========================  Фильтр Projects  ==============================  //
+
+    $("#showAll").on("click", function() {
+      $("#grid-list").removeClass();
+      $("#grid-list").addClass("ba-projects-grid--all");
+    });
+
+    $("#showHouse").on("click", function() {
+      $("#grid-list").removeClass();
+      $("#grid-list").addClass("ba-projects-grid--house");
+    });
+
+    $("#showCommercial").on("click", function() {
+      $("#grid-list").removeClass();
+      $("#grid-list").addClass("ba-projects-grid--commercial");
+    });
+
+    $("#showPersonal").on("click", function() {
+      $("#grid-list").removeClass();
+      $("#grid-list").addClass("ba-projects-grid--personal");
+    });
+
+    $("#showStudioLab").on("click", function() {
+      $("#grid-list").removeClass();
+      $("#grid-list").addClass("ba-projects-grid--studio-lab");
+    });
+
+
 //  ========================  Счетчик Like  ==============================  //
 function numberOfLikes(projectName) {
   let likesCountText = $(`.${projectName} .ba-heart__counter`).text();
@@ -139,10 +123,15 @@ $(".ba-heart__btn").on("click", function() {
         $modalImage = $("<img>");
     $modalImage.attr("src", imgSrc);
     $(".ba-modal-content-wrapper").append($modalImage); */
-
+    
     openModal();
+    $(".ba-modal-picture").not(".slick-initialized").slick();
+    $(".ba-modal-picture").slick("refresh");
+    $(".ba-modal-picture__slider").not(".slick-initialized").slick();
+    $(".ba-modal-picture__slider").slick("refresh");
 
-    let projectsName = $(this).parent().parent().attr("class");
+
+    let projectsName = $(this).parent().parent().attr("class");//переделать на ID!!!
     console.log("Секция projects:", projectsName);
 
     if (projectsName === 'ba-button-wrapper') {
@@ -258,6 +247,7 @@ $('.ba-modal-picture__slider').slick({
     centerMode: false,
     focusOnSelect: true
 });
+
 
 });
 //  ================ The End of function Ready  ===================//

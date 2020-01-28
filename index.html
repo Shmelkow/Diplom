@@ -126,40 +126,39 @@
     </div>
 
     <main>
-        <section class="ba-section ba-projects" id="projects">
-            <div class="ba-projects-main">
-                <h2 class="ba-projects-main__title">projects</h2>
-
-                <ul class="ba-projects-main__list">
-                    <li class="ba-projects-main__item">
-                        <button id="showAll" autofocus class="ba-projects-main__links" data-filter=".ba-projects--all" aria-label="show all projects">
-                            All
-                        </button>
-                    </li>
-                    <li class="ba-projects-main__item">
-                        <button id="showHouse" class="ba-projects-main__links" aria-label="show house projects">
-                            House
-                        </button>
-                    </li>
-                    <li class="ba-projects-main__item">
-                        <button id="showCommercial" class="ba-projects-main__links" aria-label="show commercial projects">
-                            Commercial
-                        </button>
-                    </li>
-                    <li class="ba-projects-main__item">
-                        <button id="showPersonal" class="ba-projects-main__links" aria-label="show personal projects">
-                            Personal
-                        </button>
-                    </li>
-                    <li class="ba-projects-main__item">
-                        <button id="showStudioLab" class="ba-projects-main__links" aria-label="show studio projects">
-                            Studio Lab
-                        </button>
-                    </li>
-                </ul>
-            </div>
-            <div class="ba-projects-grid">
-                <div class="ba-grid-main"></div>
+        <section class="ba-section ba-projects" id="projects">    
+            <div id="grid-list" class="ba-projects-grid--all">
+                <div class="ba-projects-main">
+                    <h2 class="ba-projects-main__title">projects</h2>
+    
+                    <ul class="ba-projects-main__list">
+                        <li class="ba-projects-main__item">
+                            <button id="showAll" autofocus class="ba-projects-main__links" data-filter=".ba-projects--all" aria-label="show all projects">
+                                All
+                            </button>
+                        </li>
+                        <li class="ba-projects-main__item">
+                            <button id="showHouse" class="ba-projects-main__links" aria-label="show house projects">
+                                House
+                            </button>
+                        </li>
+                        <li class="ba-projects-main__item">
+                            <button id="showCommercial" class="ba-projects-main__links" aria-label="show commercial projects">
+                                Commercial
+                            </button>
+                        </li>
+                        <li class="ba-projects-main__item">
+                            <button id="showPersonal" class="ba-projects-main__links" aria-label="show personal projects">
+                                Personal
+                            </button>
+                        </li>
+                        <li class="ba-projects-main__item">
+                            <button id="showStudioLab" class="ba-projects-main__links" aria-label="show studio projects">
+                                Studio Lab
+                            </button>
+                        </li>
+                    </ul>
+                </div>
                 <div class="ba-fondue">
                     <div class="ba-fondue__info">
                         <h3 class="ba-projects__title">Fondue</h3>
@@ -424,38 +423,39 @@
                     </div>
                     
                 </div>
+                <div class="ba-timeline">
+                    <h4 class="ba-timeline__title">Timeline</h4>
+    
+                    <ul class="ba-projects-main__list">
+                        <li class="ba-projects-main__item">
+                            <button id="show2014" class="ba-projects-main__links" aria-label="show 2014 year">
+                                2014
+                            </button>
+                        </li>
+                        <li class="ba-projects-main__item">
+                            <button id="show2013" class="ba-projects-main__links" aria-label="show 2013 year">
+                                2013
+                            </button>
+                        </li>
+                        <li class="ba-projects-main__item">
+                            <button id="show2012" class="ba-projects-main__links" aria-label="show 2012 year">
+                                2012
+                            </button>
+                        </li>
+                        <li class="ba-projects-main__item">
+                            <button id="show2011" class="ba-projects-main__links" aria-label="show 2011 year">
+                                2011
+                            </button>
+                        </li>
+                        <li class="ba-projects-main__item">
+                            <button id="show2010" class="ba-projects-main__links" aria-label="show 2010 year">
+                                2010
+                            </button>
+                        </li>
+                    </ul>
+                </div>
             </div>
-            <div class="ba-timeline">
-                <h4 class="ba-timeline__title">Timeline</h4>
-
-                <ul class="ba-projects-main__list">
-                    <li class="ba-projects-main__item">
-                        <button id="show2014" class="ba-projects-main__links" aria-label="show 2014 year">
-                            2014
-                        </button>
-                    </li>
-                    <li class="ba-projects-main__item">
-                        <button id="show2013" class="ba-projects-main__links" aria-label="show 2013 year">
-                            2013
-                        </button>
-                    </li>
-                    <li class="ba-projects-main__item">
-                        <button id="show2012" class="ba-projects-main__links" aria-label="show 2012 year">
-                            2012
-                        </button>
-                    </li>
-                    <li class="ba-projects-main__item">
-                        <button id="show2011" class="ba-projects-main__links" aria-label="show 2011 year">
-                            2011
-                        </button>
-                    </li>
-                    <li class="ba-projects-main__item">
-                        <button id="show2010" class="ba-projects-main__links" aria-label="show 2010 year">
-                            2010
-                        </button>
-                    </li>
-                </ul>
-            </div>
+           
         </section>
 
         <section class="ba-section ba-studio" id="studio">
@@ -818,7 +818,7 @@
                             <!-- <img src="images/ba-fondue/ba-fondue-4.jpg" alt="fondue" class="ba-modal-picture__img ba-img"> -->
                         </div> 
                         <div class="ba-modal-picture__item">
-                            <!-- <img src="images/ba-fondue/ba-fondue-5.jpg" alt="fondue" class="ba-modal-picture__img ba-img"> -->
+                            <!-- <img src="images/ba-fondue/ba-fondue-0.jpg" alt="fondue" class="ba-modal-picture__img ba-img"> -->
                         </div>
                     </div>
                     <ul class="ba-modal-media__list">
@@ -858,7 +858,7 @@
                         <!-- <img src="images/ba-fondue/ba-fondue-4.jpg" alt="fondue" class="ba-modal-picture__img ba-modal-picture__img_large"> -->
                     </div> 
                     <div class="ba-modal-picture__item ba-modal-picture__item_large">
-                        <!-- <img src="images/ba-fondue/ba-fondue-5.jpg" alt="fondue" class="ba-modal-picture__img ba-modal-picture__img_large"> -->
+                        <!-- <img src="images/ba-fondue/ba-fondue-0.jpg" alt="fondue" class="ba-modal-picture__img ba-modal-picture__img_large"> -->
                     </div>
                 </div>
             </div>

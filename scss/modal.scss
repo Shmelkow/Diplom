@@ -48,14 +48,14 @@
             //background-color: $secondaryColor;
         }
         &__slider {
-            width: 35%;
+            width: 60%;
             margin: 0 auto;
             @media screen and (min-width: 991px) {
                 width: 35%;
             }
         }
         &__item {
-            height: 60px;
+            height: 103px;
             //width: 120px;
             padding: 10px;
             @media screen and (min-width: 991px) {
@@ -85,9 +85,9 @@
         }
     }
     &__info {
-        height: 35vh;
+        height: 33vh;
         overflow: scroll;
-        margin-bottom: 0.75rem;
+        margin-bottom: 0;
         @media screen and (min-width: 991px) {
             margin-bottom: 0;
             height: 100%;
@@ -146,7 +146,7 @@
         &__list {
             display: flex;
             justify-content: center;
-            margin-top: 0.5rem;
+            margin-top: 0;
             @media screen and (min-width: 991px) {
                 margin-top: 0;
             }
