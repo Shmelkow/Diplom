@@ -1253,7 +1253,7 @@ ul {
     justify-content: space-around; }
     @media screen and (min-width: 991px) {
       .ba-modal-info {
-        min-height: 500px; } }
+        min-height: 50vh; } }
   .ba-modal-picture__slider {
     width: 60%;
     margin: 0 auto; }
@@ -1279,7 +1279,7 @@ ul {
       border: none; }
       @media screen and (min-width: 991px) {
         .ba-modal-picture__img_large {
-          height: 50vh; } }
+          min-height: 50vh; } }
   .ba-modal__info {
     max-height: 33vh;
     overflow: scroll;
