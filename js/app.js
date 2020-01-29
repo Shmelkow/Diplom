@@ -59,16 +59,21 @@ const likesFiji = numberOfLikes("ba-fiji");
 
 console.log(likesFondue);
 
+
+//  =================  Функция поиска имени проекта  ====================  //
+
+
+
 //  ========================  Кнопка Like  ==============================  //
 
 $(".ba-heart__btn").on("click", function() {
 
-  let projectsName = $(this).parent().parent().attr("class");
-  //console.log("Секция projects:", projectsName);
+  let projectsName = "ba-" + $(this).closest("div[id]").attr("id");
+  console.log("Секция projects:", projectsName);
 
-  if (projectsName === 'ba-button-wrapper') {
+  /* if (projectsName === 'ba-button-wrapper') {
       projectsName = $(this).parent().parent().parent().attr("class");
-  }
+  } */
 
   let buttonHeart = `.${projectsName} .ba-heart__btn > i`;
   //console.log("buttonHeart:", buttonHeart);
@@ -125,18 +130,19 @@ $(".ba-heart__btn").on("click", function() {
     $(".ba-modal-content-wrapper").append($modalImage); */
     
     openModal();
+    
     $(".ba-modal-picture").not(".slick-initialized").slick();
     $(".ba-modal-picture").slick("refresh");
     $(".ba-modal-picture__slider").not(".slick-initialized").slick();
     $(".ba-modal-picture__slider").slick("refresh");
 
 
-    let projectsName = $(this).parent().parent().attr("class");//переделать на ID!!!
+    let projectsName = "ba-" + $(this).closest("div[id]").attr("id");
     console.log("Секция projects:", projectsName);
 
-    if (projectsName === 'ba-button-wrapper') {
+    /* if (projectsName === 'ba-button-wrapper') {
         projectsName = $(this).parent().parent().parent().attr("class");
-    }
+    } */
 
     let projectsNameInfo = "." + projectsName + "__info";
     console.log("Имя__info:", projectsNameInfo);
@@ -158,10 +164,11 @@ $(".ba-heart__btn").on("click", function() {
     $(".ba-modal__text_p2").text(projectsText2);
     
     let pictureList = document.querySelectorAll(".ba-modal-picture__item");
-    console.log("pictureList:", pictureList);
+    //console.log("pictureList:", pictureList);
+    console.log("pictureList.length: ", pictureList.length);
 
     let modalPicture = [];
-    for (let i = 0; i < 12; i++) {
+    for (let i = 0; i < pictureList.length; i++) {
         modalPicture[i] = document.createElement("img");
         $(modalPicture[i]).attr("src", `images/${projectsName}/${projectsName}-${i%5}.jpg`);
         $(modalPicture[i]).addClass("ba-modal-picture__img ba-img");
@@ -169,22 +176,22 @@ $(".ba-heart__btn").on("click", function() {
         //console.log(modalPicture[i]);
     }
     
-    for (let i = 0; i < 12; i++) {
+    for (let i = 0; i < pictureList.length; i++) {
         pictureList[i].appendChild(modalPicture[i]);
     }
 
     let pictureListLarge = document.querySelectorAll(".ba-modal-picture__item_large");
-    console.log("pictureListLarge:", pictureListLarge);
+    console.log("pictureListLarge.length:", pictureListLarge.length);
 
     let modalPictureLarge = [];
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < pictureListLarge.length; i++) {
         modalPictureLarge[i] = document.createElement("img");
         $(modalPictureLarge[i]).attr("src", `images/${projectsName}/${projectsName}-${i}.jpg`);
         $(modalPictureLarge[i]).addClass("ba-modal-picture__img ba-modal-picture__img_large");
         $(modalPictureLarge[i]).attr("alt", projectsName);
         //console.log(modalPictureLarge[i]);
     }
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < pictureListLarge.length; i++) {
         pictureListLarge[i].appendChild(modalPictureLarge[i]);
     }    
   });
@@ -208,7 +215,7 @@ $(".ba-heart__btn").on("click", function() {
     //$(".ba-modal-content-wrapper").empty();
     $(".ba-modal__list").empty();
     $(".ba-modal-picture__item").empty();
-    
+    $(".ba-modal-picture__item_large").empty();
     $(document).off("keydown", closeModal);
   };
 
@@ -222,7 +229,7 @@ $(".ba-heart__btn").on("click", function() {
         closeModal();
     } */
 
-    console.log(e.target);
+    //console.log(e.target);
 
     if ( $(e.target).hasClass("ba-modal")) {
         closeModal();
@@ -231,22 +238,22 @@ $(".ba-heart__btn").on("click", function() {
 //  ======================================================================  //
 
 // ===========  slider  ============  //
-$('.ba-modal-picture').slick({
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    arrows: false,
-    fade: true,
-    asNavFor: '.ba-modal-picture__slider'
-});
-$('.ba-modal-picture__slider').slick({
-    slidesToShow: 2,
-    slidesToScroll: 1,
-    asNavFor: '.ba-modal-picture',
-    dots: false,
-    arrows: true,
-    centerMode: false,
-    focusOnSelect: true
-});
+  $('.ba-modal-picture').slick({
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      arrows: false,
+      fade: true,
+      asNavFor: '.ba-modal-picture__slider'
+  });
+  $('.ba-modal-picture__slider').slick({
+      slidesToShow: 2,
+      slidesToScroll: 1,
+      asNavFor: '.ba-modal-picture',
+      dots: false,
+      arrows: true,
+      centerMode: false,
+      focusOnSelect: true
+  });
 
 
 });

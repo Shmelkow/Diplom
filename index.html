@@ -133,33 +133,41 @@
     
                     <ul class="ba-projects-main__list">
                         <li class="ba-projects-main__item">
-                            <button id="showAll" autofocus class="ba-projects-main__links" data-filter=".ba-projects--all" aria-label="show all projects">
+                            <input type="radio" name="projects" id="showAll" class="ba-projects-main__checkbox" checked>
+                            <label for="showAll" class="ba-projects-main__links">
+                               <!--  <button id="showAll" autofocus class="ba-projects-main__links" aria-label="show all projects">
+                                    All
+                                </button> -->
                                 All
-                            </button>
+                            </label>
                         </li>
                         <li class="ba-projects-main__item">
-                            <button id="showHouse" class="ba-projects-main__links" aria-label="show house projects">
+                            <input type="radio" name="projects" id="showHouse" class="ba-projects-main__checkbox">
+                            <label for="showHouse" class="ba-projects-main__links">
                                 House
-                            </button>
+                            </label>
                         </li>
                         <li class="ba-projects-main__item">
-                            <button id="showCommercial" class="ba-projects-main__links" aria-label="show commercial projects">
+                            <input type="radio" name="projects" id="showCommercial" class="ba-projects-main__checkbox">
+                            <label for="showCommercial" class="ba-projects-main__links">
                                 Commercial
-                            </button>
+                            </label>
                         </li>
                         <li class="ba-projects-main__item">
-                            <button id="showPersonal" class="ba-projects-main__links" aria-label="show personal projects">
+                            <input type="radio" name="projects" id="showPersonal" class="ba-projects-main__checkbox">
+                            <label for="showPersonal" class="ba-projects-main__links">
                                 Personal
-                            </button>
+                            </label>
                         </li>
                         <li class="ba-projects-main__item">
-                            <button id="showStudioLab" class="ba-projects-main__links" aria-label="show studio projects">
+                            <input type="radio" name="projects" id="showStudioLab" class="ba-projects-main__checkbox">
+                            <label for="showStudioLab" class="ba-projects-main__links">
                                 Studio Lab
-                            </button>
+                            </label>
                         </li>
                     </ul>
                 </div>
-                <div class="ba-fondue">
+                <div class="ba-fondue" id="fondue">
                     <div class="ba-fondue__info">
                         <h3 class="ba-projects__title">Fondue</h3>
                         <ul class="ba-projects__list">
@@ -194,7 +202,7 @@
                         <div class="ba-heart__counter"><span>+</span> 250</div>
                     </div>
                 </div>
-                <div class="ba-potter">
+                <div class="ba-potter" id="potter">
                     <div class="ba-potter__info">
                         <h3 class="ba-projects__title">Potter</h3>
                         <ul class="ba-projects__list">
@@ -229,7 +237,7 @@
                         <img src="images/img-potter.png" class="ba-projects__img" alt="potter">
                     </div> -->
                 </div>
-                <div class="ba-louis">
+                <div class="ba-louis" id="louis">
                     <div class="ba-louis__info">
                         <h3 class="ba-projects__title">Louis XX</h3>
                         <ul class="ba-projects__list">
@@ -261,7 +269,7 @@
                         <div class="ba-heart__counter"><span>+</span> 200</div>
                     </div>
                 </div>
-                <div class="ba-p22">
+                <div class="ba-p22" id="p22">
                     <div class="ba-p22__info">
                         <h3 class="ba-projects__title">395-396 P22</h3>
                         <ul class="ba-projects__list">
@@ -295,7 +303,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="ba-tabano">
+                <div class="ba-tabano" id="tabano">
                     <div class="ba-tabano__info">
                         <h3 class="ba-projects__title">Tabano</h3>
                         <ul class="ba-projects__list">
@@ -329,7 +337,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="ba-sesann">
+                <div class="ba-sesann" id="sesann">
                     <div class="ba-sesann__info">
                         <h3 class="ba-projects__title">Sesann</h3>
                         <ul class="ba-projects__list">
@@ -363,7 +371,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="ba-alessi">
+                <div class="ba-alessi" id="alessi">
                     <div class="ba-alessi__info">
                         <h3 class="ba-projects__title">Alessi</h3>
                         <ul class="ba-projects__list">
@@ -392,7 +400,7 @@
                         <div class="ba-heart__counter"><span>+</span> 238</div>
                     </div>
                 </div>
-                <div class="ba-fiji">
+                <div class="ba-fiji" id="fiji">
                     <div class="ba-fiji__info">
                         <h3 class="ba-projects__title">Fiji</h3>
                         <ul class="ba-projects__list">
@@ -428,29 +436,37 @@
     
                     <ul class="ba-projects-main__list">
                         <li class="ba-projects-main__item">
-                            <button id="show2014" class="ba-projects-main__links" aria-label="show 2014 year">
+                            <input type="radio" name="year" id="show2014" class="ba-projects-main__checkbox" checked>
+                            <label for="show2014" class="ba-projects-main__links">
                                 2014
-                            </button>
+                            </label>
                         </li>
                         <li class="ba-projects-main__item">
-                            <button id="show2013" class="ba-projects-main__links" aria-label="show 2013 year">
+                            <input type="radio" name="year" id="show2013" class="ba-projects-main__checkbox">
+                            <label for="show2013" class="ba-projects-main__links">
                                 2013
-                            </button>
+                            </label>
                         </li>
                         <li class="ba-projects-main__item">
-                            <button id="show2012" class="ba-projects-main__links" aria-label="show 2012 year">
+                            <input type="radio" name="year" id="show2012" class="ba-projects-main__checkbox">
+                            <label for="show2012" class="ba-projects-main__links">
                                 2012
-                            </button>
+                            </label>
                         </li>
                         <li class="ba-projects-main__item">
-                            <button id="show2011" class="ba-projects-main__links" aria-label="show 2011 year">
+                            <input type="radio" name="year" id="show2011" class="ba-projects-main__checkbox">
+                            <label for="show2011" class="ba-projects-main__links">
                                 2011
-                            </button>
+                            </label>
                         </li>
                         <li class="ba-projects-main__item">
-                            <button id="show2010" class="ba-projects-main__links" aria-label="show 2010 year">
+                            <input type="radio" name="year" id="show2010" class="ba-projects-main__checkbox">
+                            <label for="show2010" class="ba-projects-main__links">
                                 2010
-                            </button>
+                            </label>
+                            <!-- <button id="show2010" class="ba-projects-main__links" aria-label="show 2010 year">
+                                2010
+                            </button> -->
                         </li>
                     </ul>
                 </div>
@@ -845,19 +861,19 @@
                     </ul>
                 </div>
                 <div class="ba-col-12 ba-col-md-5 ba-modal-picture">
-                    <div class="ba-modal-picture__item ba-modal-picture__item_large">
+                    <div class="ba-modal-picture__item_large">
                         <!-- <img src="images/ba-fondue/ba-fondue-1.jpg" alt="fondue" class="ba-modal-picture__img ba-modal-picture__img_large"> -->
                     </div>
-                    <div class="ba-modal-picture__item ba-modal-picture__item_large">
+                    <div class="ba-modal-picture__item_large">
                         <!-- <img src="images/ba-fondue/ba-fondue-2.jpg" alt="fondue" class="ba-modal-picture__img ba-modal-picture__img_large"> -->
                     </div>
-                    <div class="ba-modal-picture__item ba-modal-picture__item_large">
+                    <div class="ba-modal-picture__item_large">
                         <!-- <img src="images/ba-fondue/ba-fondue-3.jpg" alt="fondue" class="ba-modal-picture__img ba-modal-picture__img_large"> -->
                     </div>
-                    <div class="ba-modal-picture__item ba-modal-picture__item_large">
+                    <div class="ba-modal-picture__item_large">
                         <!-- <img src="images/ba-fondue/ba-fondue-4.jpg" alt="fondue" class="ba-modal-picture__img ba-modal-picture__img_large"> -->
                     </div> 
-                    <div class="ba-modal-picture__item ba-modal-picture__item_large">
+                    <div class="ba-modal-picture__item_large">
                         <!-- <img src="images/ba-fondue/ba-fondue-0.jpg" alt="fondue" class="ba-modal-picture__img ba-modal-picture__img_large"> -->
                     </div>
                 </div>
