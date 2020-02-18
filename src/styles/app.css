@@ -96,7 +96,7 @@
   .ba-col-md-12 {
     width: 100%; }
   .hidden-md {
-    display: none; } }
+    display: none !important; } }
 
 @media screen and (max-width: 990px) {
   .hidden-sm {
@@ -1274,12 +1274,13 @@ ul {
     .ba-modal-picture__img_large {
       height: 35vh;
       width: 100%;
-      object-fit: cover;
+      object-fit: contain;
       object-position: center;
       border: none; }
       @media screen and (min-width: 991px) {
         .ba-modal-picture__img_large {
-          min-height: 50vh; } }
+          min-height: 50vh;
+          object-fit: cover; } }
   .ba-modal__info {
     max-height: 33vh;
     overflow: scroll;

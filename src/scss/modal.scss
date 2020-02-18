@@ -78,12 +78,13 @@
             &_large {
                 height: 35vh;
                 width: 100%;
-                object-fit: cover;
+                object-fit: contain;
                 object-position: center;
                 border: none;
                 @media screen and (min-width: 991px) {
                     //min-height: 500px;
                     min-height: 50vh;
+                    object-fit: cover;
                 }
                 
             }

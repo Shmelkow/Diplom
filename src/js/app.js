@@ -168,16 +168,15 @@ $(".ba-heart__btn").on("click", function() {
     console.log("pictureList.length: ", pictureList.length);
 
     let modalPicture = [];
+    let index = 3;
     for (let i = 0; i < pictureList.length; i++) {
-        modalPicture[i] = document.createElement("img");
-        $(modalPicture[i]).attr("src", `images/${projectsName}/${projectsName}-${i%5}.jpg`);
-        $(modalPicture[i]).addClass("ba-modal-picture__img ba-img");
-        $(modalPicture[i]).attr("alt", projectsName);
-        //console.log(modalPicture[i]);
-    }
-    
-    for (let i = 0; i < pictureList.length; i++) {
-        pictureList[i].appendChild(modalPicture[i]);
+      modalPicture[i] = document.createElement("img");
+      $(modalPicture[i]).attr("src", `images/${projectsName}/${projectsName}-${index%5}.jpg`);
+      $(modalPicture[i]).addClass("ba-modal-picture__img ba-img");
+      $(modalPicture[i]).attr("alt", projectsName);
+      //console.log(modalPicture[i]);
+      pictureList[i].appendChild(modalPicture[i]);
+      index++;
     }
 
     let pictureListLarge = document.querySelectorAll(".ba-modal-picture__item_large");
@@ -185,15 +184,13 @@ $(".ba-heart__btn").on("click", function() {
 
     let modalPictureLarge = [];
     for (let i = 0; i < pictureListLarge.length; i++) {
-        modalPictureLarge[i] = document.createElement("img");
-        $(modalPictureLarge[i]).attr("src", `images/${projectsName}/${projectsName}-${i}.jpg`);
-        $(modalPictureLarge[i]).addClass("ba-modal-picture__img ba-modal-picture__img_large");
-        $(modalPictureLarge[i]).attr("alt", projectsName);
-        //console.log(modalPictureLarge[i]);
-    }
-    for (let i = 0; i < pictureListLarge.length; i++) {
-        pictureListLarge[i].appendChild(modalPictureLarge[i]);
-    }    
+      modalPictureLarge[i] = document.createElement("img");
+      $(modalPictureLarge[i]).attr("src", `images/${projectsName}/${projectsName}-${i%5}.jpg`);
+      $(modalPictureLarge[i]).addClass("ba-modal-picture__img ba-modal-picture__img_large");
+      $(modalPictureLarge[i]).attr("alt", projectsName);
+      //console.log(modalPictureLarge[i]);
+      pictureListLarge[i].appendChild(modalPictureLarge[i]);
+    } 
   });
 
 
@@ -241,6 +238,7 @@ $(".ba-heart__btn").on("click", function() {
   $('.ba-modal-picture').slick({
       slidesToShow: 1,
       slidesToScroll: 1,
+      initialSlide: 0,
       arrows: false,
       fade: true,
       asNavFor: '.ba-modal-picture__slider'
@@ -248,11 +246,13 @@ $(".ba-heart__btn").on("click", function() {
   $('.ba-modal-picture__slider').slick({
       slidesToShow: 2,
       slidesToScroll: 1,
+      initialSlide: 0,
       asNavFor: '.ba-modal-picture',
       dots: false,
       arrows: true,
       centerMode: false,
-      focusOnSelect: true
+      centerPadding: 0,
+      focusOnSelect: true,
   });
 
 
